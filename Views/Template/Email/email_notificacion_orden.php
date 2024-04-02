@@ -80,7 +80,7 @@ $detalle = $data['pedido']['detalle'];
         <table>
             <tr>
                 <td width="33.33%">
-                    <img class="logoEmail" src="https://lh3.googleusercontent.com/fife/ALs6j_F2-ue2ENkVxgwekznxKXBjSZInNnfn5-f6agMETAsGn_zpYvP7LR3gyl0EWvg2hiD7T7XPoH1KDufDd4DReRa_FEO53cHI8ejv8VNk7kvxNKeqWkQ88FnS1-sJYzyr3e1ptLVL7EpaA42SgMrGaPpvOHNnTFlR02udc2TwFPACJ9EgNSTcvatcngfBjRBGV0F2EgqDyUEiJzzbmLXkIL9-2hf5eJNPh_R9aCBgx9dDK2KZvKtlMYSUfxckUE1jIDwwu41TDP6cAw6eZ-ZU6XAWUTnEc4QKMAE073fPsrdrnCepx3AdKhPCnvi6hFVfnM259XwAYWYJ7w8YKXtogX_mfjrPVTuVEd-8BlGV3CfAsxqz0W4Y_uIyxQ9nYvMmHBuwRqom1vgNoMxPHr5-eEchTPtPaRJQU2qOkWzQTTg8KbDbLfgp-sIQ9U8zowWXntlklSUJyWDfjxyHUUm-AhMzJ3NyoVKc0Jbd54rORBt5SHJh0Zpy91scv1KVuUqXQdJSBeCGs4lV_Ls5J1kIKaaus6Q36TWh1XQ_XpIE_PDA8xikJzv5KEmlsgIu6gmS1VFEOCYIFZSYB4bKO4DYP-RkK7son-kSH0DOmt8JHqC80FlGPfsTe7s2cR_aEj8fGa9aGQetyZuSilTp_dBqd55GLAm_XFlT9dkTqq4i6_Bz6_bVnb5cfCbEJmQvTNlsaqHRlUII9-3wxx2pqBmQogx1bKMJ0dhQrJAvDoprcWCuwSmMHRVFfZ3TsbD5QSmwWcFPyQgF5PE1z0kqLmuiQAnGC8kY0s90HD83h8LWlCQPcnFsWbqUf6lZ4YBrWrvxvOa9KCsFxHGYHChWjbw3S_-XRRdU-Tq5BiNHhdsdGn7InSfiAIbH1_8Tp6SyDTPxbUOED2h771yT_Ofmu5mKWyO5le0_F0v6eg9Pf9Vs8kuI0MkGW7FNp4u2HjbNoAHtlFIQ3cIAUvRXRi2cd0fkjTa0SV1duaySJS3g4E3-mnPpYr9lGECMCfEdmZLLgIFl8aJR5WcFY_N6Lbq_FXhFkPcteXyzN49TemviJpM=w1920-h953" alt="Logo">
+                    <img class="logoEmail" src="https://i.ibb.co/DMsfF9c/Art-Ceramic-Shop-LOGO.png" alt="Logo">
                 </td>
                 <td>
                     <div class="text-center">

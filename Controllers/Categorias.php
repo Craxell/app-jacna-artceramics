@@ -10,7 +10,7 @@
 				header('Location: '.base_url().'/login');
 				die();
 			}
-			getPermisos(6);
+			getPermisos(MCATEGORIAS);
 		}
 
 		public function Categorias()

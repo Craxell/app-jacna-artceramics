@@ -1,6 +1,8 @@
 <?php 
 headerTienda($data);
 $arrProductos = $data['productos'];
+
+
  ?>
 <br><br><br>
 <hr>

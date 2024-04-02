@@ -11,7 +11,7 @@
 				header('Location: '.base_url().'/login');
 				die();
 			}
-			getPermisos(2);
+			getPermisos(MUSUARIOS);
 		}
 
 		public function Usuarios()

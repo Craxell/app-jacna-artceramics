@@ -3,7 +3,6 @@
 	$arrSlider = $data['slider'];
 	$arrBanner = $data['banner'];
 	$arrProductos = $data['productos'];
-
 	
  ?>
 

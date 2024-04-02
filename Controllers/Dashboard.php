@@ -11,7 +11,7 @@
 				header('Location: '.base_url().'/login');
 				die();
 			}
-			getPermisos(1);
+			getPermisos(MDASHBOARD);
 		}
 
 		public function dashboard()

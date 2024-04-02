@@ -33,53 +33,49 @@
 	const URLPAYPAL_SANDBOX = "https://api-m.sandbox.paypal.com";
 	const SECRETPAYPAL_SANDBOX = "ENXQIug8JbxFcT-2BiQI_-fzjAdQobzaK3WbNbxgIEC7jW1-hI5wSTlN6kdxYteWFOXrqXg7N4SrBCmL";
 
-	
-
 	//Costo de envio
 	const COSTOENVIO = 2000; //2k envio
 
 	//Datos envio de correo
 	const ENVIROMENT = 0; //SendEmail de produccion 1, SendEmail localhost 0
 
-
 	const NOMBRE_REMITENTE = "ArtCeramics";
 	const EMAIL_REMITENTE = "jacnasartceramics@gmail.com";
 	const NOMBRE_EMPRESA = "Art Ceramics";
 	const WEB_EMPRESA = "Art Ceramics";
 
-
 	//Datos empresa
-
 	const DIRECCION = "La casa de juan eduardo";
 	const CONTACTO = "(+57) 320 9255747";
 	const EMAIL_EMPRESA = "jacnasartceramics@gmail.com";
 	const EMAIL_PEDIDOS = "jacnasartceramics@gmail.com";
 
 	//Redes Empresa
-
 	const WHATSAPP_EMPRESA = "https://wa.me/573209255747";
 	const INSTAGRAM_EMPRESA = "https://www.instagram.com/artceramicshop/";
 
-
 	//Tienda imagenes a mostrar
-	const CAT_SLIDER = "10,9,";
-	const CAT_BANNER = "10,9,";
+	const CAT_SLIDER="9,10,12";
+	const CAT_BANNER="9,10,12";
 
 	//Encrypt
 	const KEY = 'artCeramics';
 	const METHODENCRYPT = "AES-128-ECB";
 
 
-	//Módulos Crear las constantes basados en la base para utilizarlas donde es requerido.
+	//Módulos
+	const MDASHBOARD = 1;
+	const MUSUARIOS = 2;
 	const MCLIENTES = 3;
-
-
-	const MPEDIDOS = 5;
 	const MPRODUCTOS = 4;
+	const MPEDIDOS = 5;
+	const MCATEGORIAS = 6;
+	
 
-	//Roles Crear las constantes basados en la base para utilizarlas donde es requerido.
+	//Roles
 	const RADMINISTRADOR = 1;
 	const RCLIENTES = 7;
+	const RDIRECTIVOARTCERAMICS = 11;
 
 	const STATUS = array('Completo','Aprobado','Cancelado','Reembolsado','Pendiente','Entregado');
 	

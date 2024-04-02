@@ -39,6 +39,8 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 			<img src="<?=media(); ?>/images/loading.svg" alt="Loading">
 		</div>
 	</div>
+
+	
 	
 	<!-- Header -->
 	<header>
@@ -49,6 +51,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 				<div class="content-topbar flex-sb-m h-full container">
 
 				<div class="left-top-bar">
+
 					<?php
 						if(isset($_SESSION['userData']) && isset($_SESSION['userData']['nombres'])) {
 							echo "Bienvenido " . $_SESSION['userData']['nombres'];

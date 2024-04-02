@@ -8,6 +8,7 @@
     require 'Libraries/PHPMailer/SMTP.php';
 
 
+
 	//Retorla la url del proyecto
 	function base_url()
 	{
@@ -163,6 +164,7 @@
     function deleteFile(string $name){
         unlink('Assets/images/uploads/'.$name);
     }
+
 
     //Elimina exceso de espacios entre palabras
     function strClean($strCadena){
