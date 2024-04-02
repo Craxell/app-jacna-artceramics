@@ -165,7 +165,13 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 			<ul class="topbar-mobile">
 				<li>
 					<div class="left-top-bar">
-						Bienvenido <?= $_SESSION['userData']['nombres']; ?>
+						<?php
+							if(isset($_SESSION['userData']) && isset($_SESSION['userData']['nombres'])) {
+								echo "Bienvenido " . $_SESSION['userData']['nombres'];
+							} else {
+								echo "Cuenta de Invitado"; 
+							}
+						?>
 					</div>
 				</li>
 

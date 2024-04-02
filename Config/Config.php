@@ -1,9 +1,9 @@
 <?php 
 	
-    const ROOT_URL ="http://192.168.0.28/"; 
+    //const ROOT_URL ="http://192.168.0.28/"; 
 	//Se usa este cuando se abre para los dispositivos locales, se pone la ip local del pc que hace de server
 
-    //const ROOT_URL="http://localhost/";
+    const ROOT_URL="http://localhost/";
 
     //Define  url base
     const BASE_URL = ROOT_URL."proyectoIngSoftware/";
@@ -55,11 +55,15 @@
 	const EMAIL_EMPRESA = "jacnasartceramics@gmail.com";
 	const EMAIL_PEDIDOS = "jacnasartceramics@gmail.com";
 
+	//Redes Empresa
+
+	const WHATSAPP_EMPRESA = "https://wa.me/573209255747";
+	const INSTAGRAM_EMPRESA = "https://www.instagram.com/artceramicshop/";
 
 
 	//Tienda imagenes a mostrar
-	const CAT_SLIDER = "10,9,12";
-	const CAT_BANNER = "10,9,12";
+	const CAT_SLIDER = "10,9,";
+	const CAT_BANNER = "10,9,";
 
 	//Encrypt
 	const KEY = 'artCeramics';
@@ -68,7 +72,10 @@
 
 	//Módulos Crear las constantes basados en la base para utilizarlas donde es requerido.
 	const MCLIENTES = 3;
+
+
 	const MPEDIDOS = 5;
+	const MPRODUCTOS = 4;
 
 	//Roles Crear las constantes basados en la base para utilizarlas donde es requerido.
 	const RADMINISTRADOR = 1;

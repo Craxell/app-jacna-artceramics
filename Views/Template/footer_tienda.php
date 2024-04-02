@@ -41,19 +41,19 @@
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
-						La casa de juan eduardo <br>
-						Tel: (+57) 320 9255747
+						<strong>Direccion:</strong> <?= DIRECCION ?> <br>
+						<strong>Telefono: </strong> <?= CONTACTO ?>
 					</p>
 
 					<div class="p-t-27">
 						<ul>
 							<li>
-								<a href="https://www.instagram.com/artceramicshop/" target="_blanck"  class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+								<a href="<?= INSTAGRAM_EMPRESA?>" target="_blanck"  class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
 									<i class="fa fa-instagram">  Instagram</i>
 								</a>
 							</li>
 							<li>
-								<a href="https://wa.me/573209255747" target = "_blanck" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+								<a href="<?= WHATSAPP_EMPRESA?>" target = "_blanck" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
 									<i class="fa fa-whatsapp">  WhatsApp</i>
 								</a>
 							</li>
