@@ -64,7 +64,7 @@
 
 			<div class="p-t-40">
 				<p class="stext-107 cl6 txt-center">
-					<?= NOMBRE_EMPESA; ?> | <?= WEB_EMPRESA; ?>  
+					<?= NOMBRE_EMPRESA; ?> | <?= WEB_EMPRESA; ?>  
 				</p>
 			</div>
 		</div>
@@ -98,8 +98,6 @@
 	<script src="<?= media() ?>/tienda/js/main2.js"></script>
 	<script src="<?= media() ?>/tienda/js/functions_carrito.js"></script>
 	<script src="<?= media() ?>/tienda/js/functions_tienda.js"></script>
-	
-
 	<script src="<?= media() ?>/js/functions_login.js"></script>
 	<script src="<?= media() ?>/js/functions_admin.js"></script>
 </body>

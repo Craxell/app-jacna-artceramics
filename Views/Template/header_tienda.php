@@ -14,6 +14,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 	<title><?= $data['page_tag']; ?></title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content = "IE=edge" />
 	<link rel="icon" type="image/png" href="<?= media() ?>/tienda/images/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -46,9 +47,17 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 			<!-- Topbar -->
 			<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
-					<div class="left-top-bar">
-						Bienvenido usuario: xxxxxxxxxxxxxxxxxxx
-					</div>
+
+				<div class="left-top-bar">
+					<?php
+						if(isset($_SESSION['userData']) && isset($_SESSION['userData']['nombres'])) {
+							echo "Bienvenido " . $_SESSION['userData']['nombres'];
+						} else {
+							echo "Cuenta de Invitado"; 
+						}
+					?>
+				</div>
+
 
 					<div class="right-top-bar flex-w h-full">
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
@@ -73,13 +82,15 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
-					<a href="<?= base_url(); ?>" class="logo">
+					<a href="<?= base_url(); ?>/" class="logo">
+						<!-- <img src="<?= media() ?>/images/ArtCeramicShop.png" alt="Tienda Virtual" class = "logoImage"> -->
 						<h3>Art Ceramics Tienda Online</h3>
 					</a>
 
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
+
 							<li class="active-menu">
 								<a href="<?= base_url(); ?>">Inicio</a>
 							</li>
@@ -107,13 +118,8 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
 							<i class="zmdi zmdi-search"></i>
 						</div>
-						<script>
-							function reproducirSonido() {
-								var audio = new Audio("<?= base_url(); ?>Assets/audio/untitled.wav");
-								audio.play();
-							}
-						</script>
-						<?php if($data['page_name'] != "carrito") { ?>
+
+						<?php if($data['page_name'] != "carrito" and $data['page_name'] != "procesarpago") { ?>
 
 						<div class="cantCarrito icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="<?= $cantCarrito; ?>">
 							<i class="zmdi zmdi-shopping-cart"></i>
@@ -129,7 +135,8 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 			<!-- Logo moblie -->		
 			
 			<a href="<?= base_url(); ?>" class="logo">
-				<h3>Art Ceramics</h3>
+				<img src="<?= media() ?>/images/ArtCeramicShop.png" alt="Tienda Virtual" class = "logoImage">
+				<!-- <h3>Art Ceramics</h3> -->
 			</a>
 
 			<!-- Icon header -->
@@ -137,7 +144,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
 					<i class="zmdi zmdi-search"></i>
 				</div>
-				<?php if($data['page_name'] != "carrito") { ?>
+				<?php if($data['page_name'] != "carrito" and $data['page_name'] != "procesarpago") { ?>
 					<div class="cantCarrito icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="<?= $cantCarrito; ?>">
 						<i class="zmdi zmdi-shopping-cart"></i>
 					</div>
@@ -158,7 +165,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 			<ul class="topbar-mobile">
 				<li>
 					<div class="left-top-bar">
-						Bienvenido xxxxxxxxxx
+						Bienvenido <?= $_SESSION['userData']['nombres']; ?>
 					</div>
 				</li>
 

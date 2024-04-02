@@ -1,5 +1,13 @@
 <?php 
 
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+
+    require 'Libraries/PHPMailer/Exception.php';
+    require 'Libraries/PHPMailer/PHPMailer.php';
+    require 'Libraries/PHPMailer/SMTP.php';
+
+
 	//Retorla la url del proyecto
 	function base_url()
 	{
@@ -31,13 +39,13 @@
         require_once ($view_footer);        
     }
 	//Muestra información formateada
-	function dep($data)
-    {
+	function dep($data){
         $format  = print_r('<pre>');
         $format .= print_r($data);
         $format .= print_r('</pre>');
         return $format;
     }
+
     function getModal(string $nameModal, $data)
     {
         $view_modal = "Views/Template/Modals/{$nameModal}.php";
@@ -50,23 +58,78 @@
         $file = ob_get_clean();
         return $file;
     }
+
+
     //Envio de correos
-    function sendEmail($data,$template)
-    {
+    // function sendEmail1($data,$template)
+    // {
+    //     $asunto = $data['asunto'];
+    //     $emailDestino = $data['email'];
+    //     $empresa = NOMBRE_REMITENTE;
+    //     $remitente = EMAIL_REMITENTE;
+
+    //     $emailCopia = !empty($data['emailCopia']) ? $data['emailCopia'] : "";
+
+    //     //ENVIO DE CORREO
+    //     $de = "MIME-Version: 1.0\r\n";
+    //     $de .= "Content-type: text/html; charset=UTF-8\r\n";
+    //     $de .= "From: {$empresa} <{$remitente}>\r\n";
+    //     $de .= "Bcc: $emailCopia\r\n";
+
+    //     ob_start();
+    //     require_once("Views/Template/Email/".$template.".php");
+    //     $mensaje = ob_get_clean();
+    //     $send = mail($emailDestino, $asunto, $mensaje, $de);
+    //     return $send;
+    // }
+
+
+
+    function sendEmail($data, $template){
+
         $asunto = $data['asunto'];
         $emailDestino = $data['email'];
         $empresa = NOMBRE_REMITENTE;
         $remitente = EMAIL_REMITENTE;
-        //ENVIO DE CORREO
-        $de = "MIME-Version: 1.0\r\n";
-        $de .= "Content-type: text/html; charset=UTF-8\r\n";
-        $de .= "From: {$empresa} <{$remitente}>\r\n";
+
         ob_start();
         require_once("Views/Template/Email/".$template.".php");
         $mensaje = ob_get_clean();
-        $send = mail($emailDestino, $asunto, $mensaje, $de);
-        return $send;
+
+
+        $mail = new PHPMailer(true);
+
+        try {
+            //Server settings
+            $mail->SMTPDebug = 0;                      //Enable verbose debug output
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->Username   = $remitente;                     //SMTP username
+            $mail->Password   = 'xeuojnaewwuzumnr';                               //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+            $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+            //Recipients
+            $mail->setFrom($remitente, $empresa);
+            $mail->addAddress($emailDestino);     //Add a 
+            
+            if(!empty($data['emailCopia'])){
+                $mail->addBCC($data['emailCopia']);
+            }
+            
+            //Content
+            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->Subject = $data['asunto'];
+            $mail->Body    = $mensaje;
+
+            $mail->send();
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
     }
+
 
     function getPermisos(int $idmodulo){
         require_once ("Models/PermisosModel.php");
@@ -165,5 +228,88 @@
         return $cantidad;
     }
     
+    function getTokenPaypal(){
+        $payLogin = curl_init(URLPAYPAL_SANDBOX."/v1/oauth2/token");
+        curl_setopt($payLogin, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($payLogin, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($payLogin, CURLOPT_USERPWD, IDCLIENTE_SANDBOX.":".SECRETPAYPAL_SANDBOX);
+        curl_setopt($payLogin, CURLOPT_POSTFIELDS, "grant_type=client_credentials");
+        $result = curl_exec($payLogin);
+        $err = curl_error($payLogin);
+        curl_close($payLogin);
+        
+        if($err){
+            $request = "CURL Error #:" . $err;
+        }else{
+            $objData = json_decode($result);
+            $request = $objData -> access_token;
+        }
+        return $request;
+    }
+
+    function CurlConnectionGet(string $ruta, string $contentType = null, string $token){
+        $content_type = $contentType != null ? $contentType : "application/x-www-form-urlencoded";
+        if($token !=null){
+            $arrHeader = array(
+                'Content-Type:'.$content_type,
+                'Authorization: Bearer '.$token
+            );
+        }else{
+            $arrHeader = array('Content-Type:'.$content_type);
+            
+        }
+        
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $ruta);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
+
+        $result = curl_exec($ch);
+        $err = curl_error($ch);
+
+        curl_close($ch);
+
+        if($err){
+            $request = "CURL Error #:" . $err;
+        }else{
+            $request = json_decode($result);
+        }
+        return $request;
+    }
+
+    function CurlConnectionPost(string $ruta, string $contentType = null, string $token){
+        $content_type = $contentType != null ? $contentType : "application/x-www-form-urlencoded";
+        if($token !=null){
+            $arrHeader = array(
+                'Content-Type:'.$content_type,
+                'Authorization: Bearer '.$token
+            );
+        }else{
+            $arrHeader = array('Content-Type:'.$content_type);
+            
+        }
+        
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $ruta);
+        curl_setopt($ch, CURLOPT_POST, TRUE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
+
+        $result = curl_exec($ch);
+        $err = curl_error($ch);
+
+        curl_close($ch);
+
+        if($err){
+            $request = "CURL Error #:" . $err;
+        }else{
+            $request = json_decode($result);
+        }
+        return $request;
+    }
 
  ?>

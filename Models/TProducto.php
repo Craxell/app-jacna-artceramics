@@ -4,9 +4,11 @@ trait TProducto{
 	private $con;
 	private $strCategoria;
 	private $intIdcategoria;
+	private $intIdProducto;
 	private $strProducto;
 	private $cant;
 	private $option;
+	private $strRuta;
 	public function getProductosT(){
 		$this->con = new Mysql();
 		$sql = "SELECT p.idproducto,
@@ -16,6 +18,7 @@ trait TProducto{
 						p.categoriaid,
 						c.nombre as categoria,
 						p.precio,
+						p.ruta,
 						p.stock
 				FROM producto p 
 				INNER JOIN categoria c
@@ -134,6 +137,7 @@ trait TProducto{
 						p.categoriaid,
 						c.nombre as categoria,
 						p.precio,
+						p.ruta,
 						p.stock
 				FROM producto p 
 				INNER JOIN categoria c
@@ -157,14 +161,11 @@ trait TProducto{
 					}
 				}
 		return $request;
+	}	
 
-	}
-
-	
 	public function getProductoIDT(int $idproducto){
 		$this->con = new Mysql();
 		$this->intIdProducto = $idproducto;
-
 		$sql = "SELECT p.idproducto,
 						p.codigo,
 						p.nombre,
@@ -172,6 +173,7 @@ trait TProducto{
 						p.categoriaid,
 						c.nombre as categoria,
 						p.precio,
+						p.ruta,
 						p.stock
 				FROM producto p 
 				INNER JOIN categoria c
@@ -188,12 +190,13 @@ trait TProducto{
 						for ($i=0; $i < count($arrImg); $i++) { 
 							$arrImg[$i]['url_image'] = media().'/images/uploads/'.$arrImg[$i]['img'];
 						}
+					}else{
+						$arrImg[0]['url_image'] = media().'/images/uploads/product.png';
 					}
 					$request['images'] = $arrImg;
 				}
 		return $request;
 	}
-
 }
 
-?>
+ ?>
