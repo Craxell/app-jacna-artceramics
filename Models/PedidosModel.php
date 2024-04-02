@@ -64,7 +64,8 @@
                     nit, 
                     nombrefiscal, 
                     direccionfiscal
-                FROM persona WHERE idpersona = $idpersona";
+                FROM persona WHERE idpersona = 
+                $idpersona";
                 $requestcliente = $this->select($sql_cliente);
 
                 $sql_detalle = "SELECT p.idproducto, 
