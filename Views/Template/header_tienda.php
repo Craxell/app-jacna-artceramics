@@ -71,7 +71,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 							Mi cuenta
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
+						<a href="<?= base_url(); ?>/LogoutShop" class="flex-c-m trans-04 p-lr-25">
 							Salir
 						</a>
 						
@@ -137,8 +137,8 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			
-			<a href="<?= base_url(); ?>" class="logo">
-				<img src="<?= media() ?>/images/ArtCeramicShop.png" alt="Tienda Virtual" class = "logoImage">
+			<a href="<?= base_url(); ?>" class="logoHeader">
+				<img src="<?= media() ?>/images/ArtCeramicShop.png" alt="Tienda Virtual" class = "logoHeader">
 				<!-- <h3>Art Ceramics</h3> -->
 			</a>
 

@@ -17,8 +17,8 @@
 		public function dashboard()
 		{
 			$data['page_id'] = 2;
-			$data['page_tag'] = "Dashboard - Tienda Virtual";
-			$data['page_title'] = "Dashboard - Tienda Virtual";
+			$data['page_tag'] = "Dashboard - ArtCeramics";
+			$data['page_title'] = "Dashboard - ArtCeramics";
 			$data['page_name'] = "dashboard";
 			$data['page_functions_js'] = "functions_dashboard.js";
 			$this->views->getView($this,"dashboard",$data);

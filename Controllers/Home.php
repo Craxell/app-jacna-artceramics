@@ -13,7 +13,7 @@
 		{
 			$data['page_tag'] = NOMBRE_EMPRESA;
 			$data['page_title'] = NOMBRE_EMPRESA;
-			$data['page_name'] = "tienda_virtual";
+			$data['page_name'] = "ArtCeramics";
 			$data['slider'] = $this->getCategoriasT(CAT_SLIDER);
 			$data['banner'] = $this->getCategoriasT(CAT_BANNER);
 			$data['productos'] = $this->getProductosT();

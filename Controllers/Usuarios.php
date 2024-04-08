@@ -20,7 +20,7 @@
 				header("Location:".base_url().'/dashboard');
 			}
 			$data['page_tag'] = "Usuarios";
-			$data['page_title'] = "USUARIOS <small>Tienda Virtual</small>";
+			$data['page_title'] = "USUARIOS <small>ArtCeramics</small>";
 			$data['page_name'] = "usuarios";
 			$data['page_functions_js'] = "functions_usuarios.js";
 			$this->views->getView($this,"usuarios",$data);

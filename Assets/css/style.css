@@ -1,3 +1,8 @@
+:root {
+	/* --primary: #09e025; */
+	--primary: #690644
+}
+
 .app-sidebar__user-avatar {
     width: 48px;
     background: gray;
@@ -194,14 +199,149 @@
 	margin-bottom: 0;
 }
 
+.logo h3{
+	color:  var(--primary)
+}
+
 .logoImage {
-	
     width: 100%; 
 	display: flex;
 	height: 100%;
 	border-radius: 20%;
 }
 
+.logoHeader{
+    width: 50px; 
+	display: flex;
+	height: 50px;
+	border-radius: 60%;
+}
+
 .modal{
 	z-index: 9999;
+}
+
+
+.wrap-icon-header {
+    margin-left: auto;
+}
+
+.icon-header-item {
+    margin-left: 10px;
+}
+
+
+.menu-desktop .main-menu li a:hover {
+    color: var(--primary)
+}
+
+.menu-desktop .main-menu li.active-menu a,
+.menu-desktop .main-menu li.active-menu a:hover {
+    color: var(--primary)
+}
+
+.wrap-icon-header .icon-header-item:hover {
+    color: var(--primary)
+}
+
+
+.wrap-icon-header .cantCarrito.icon-header-item:after {
+    background-color: var(--primary)
+}
+
+
+.bg1 {
+	background-color: var(--primary)
+}
+
+
+.block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3:hover{
+	background-color: var(--primary)
+}
+
+
+/* #F2B578 */
+
+
+.material-half-bg .cover {
+    background-color: var(--primary);
+    height: 50vh;
+}
+
+/* .material-half-bg {
+    background-color: #F2B578;
+} */
+
+::selection {
+	background-color: var(--primary)
+}
+
+
+.form-control:focus {
+	border-color: var(--primary)
+}
+
+a{
+	color: var(--primary)
+}
+
+a:hover{
+	color: var(--primary)
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary)
+}
+
+.btn-primary:hover{
+    background-color: var(--primary);
+	border-color: var(--primary)
+}
+.app-header__logo {
+	background-color: var(--primary)
+}
+
+.app-sidebar__toggle {
+    background-color: var(--primary)
+}
+
+.app-sidebar__toggle:focus, .app-sidebar__toggle:hover {
+    background-color: var(--primary)
+}
+
+.app-header {
+	background-color: var(--primary);
+}
+
+.app-menu__item.active, .app-menu__item:hover, .app-menu__item:focus {
+    border-left-color:  var(--primary)
+}
+
+.treeview.is-expanded [data-toggle=treeview] {
+    border-left-color:  var(--primary)
+}
+
+
+
+.toggle-flip input[type="checkbox"] + .flip-indecator::after {
+	
+	background-color: var(--primary);
+
+}
+
+
+.sweet-alert button {
+	background-color:  var(--primary) !important;
+	
+}
+
+
+.main-menu-m {
+	background-color:  var(--primary)
+}
+
+
+.block1-txt:hover {
+	background-color:  var(--primary)
 }

@@ -2,10 +2,10 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="Tienda Virtual Abel OSH">
+    <meta name="description" content="Tienda Virtual ArtCeramics">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Abel OSH">
+    <meta name="author" content="JACNA's Solutions - ArtCeramics">
     <meta name="theme-color" content="#009688">
     <link rel="shortcut icon" href="<?= media();?>/images/favicon.ico">
     <title><?= $data['page_tag'] ?></title>
@@ -21,7 +21,7 @@
       </div>
     </div>
     <!-- Navbar-->
-    <header class="app-header"><a class="app-header__logo" href="<?= base_url(); ?>/dashboard">Tienda Virtual</a>
+    <header class="app-header"><a class="app-header__logo" href="<?= base_url(); ?>/dashboard">ArtCeramics</a>
       <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"><i class="fas fa-bars"></i></a>
       <!-- Navbar Right Menu-->
       <ul class="app-nav">

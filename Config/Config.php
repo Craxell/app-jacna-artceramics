@@ -1,6 +1,6 @@
 <?php 
 	
-    //const ROOT_URL ="http://192.168.0.28/"; 
+    //const ROOT_URL ="http://192.168.0.28/";
 	//Se usa este cuando se abre para los dispositivos locales, se pone la ip local del pc que hace de server
 
     const ROOT_URL="http://localhost/";
