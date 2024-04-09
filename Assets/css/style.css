@@ -8,6 +8,7 @@
     background: gray;
     padding: 6px;
 }
+
 .app-sidebar__toggle{
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -18,29 +19,37 @@
 	align-items: center;
 	font-size: 15pt;
 }
+
 .app-sidebar__toggle::before{
 	display: none;
 }
+
 .headerRegister, .header-primary{
 	background: #009688;
 	color: #FFF;
 }
+
 .headerUpdate{
-	background: #007bff;
+	background: var(--primary);
 	color: #FFF;
 }
+
 .textcenter{
 	text-align: center;
 }
+
 .textright{
 	text-align: right;
 }
+
 .textleft{
 	text-align: left;
 }
+
 .bootstrap-select > .dropdown-toggle{
 	border: 1px solid #CCC;
 }
+
 /*Estilos login*/
 #divLoading{
 	position: fixed;
@@ -54,15 +63,18 @@
 	z-index: 9999;
 	display: none;
 }
+
 #divLoading img{
 	width: 50px;
 	height: 50px;
 }
+
 .required{
 	color: red;
 	font-size: 13pt;
 	font-weight: bold;
 }
+
 /* style portada categoría */
 .prevPhoto {
     display: flex;
@@ -78,6 +90,7 @@
     background-position: center center;
     margin: auto;
 }
+
 .prevPhoto label{
 	cursor: pointer;
 	width: 100%;
@@ -87,13 +100,16 @@
 	left: 0;
 	z-index: 2;
 }
+
 .prevPhoto img{
 	width: 100%;
 	height: 100%;
 }
+
 .upimg, .notblock{
 	display: none !important;
 }
+
 .errorArchivo{
 	font-size: 16px;
 	font-family: arial;
@@ -102,6 +118,7 @@
 	font-weight: bold; 
 	margin-top: 10px;
 }
+
 .delPhoto{
 	color: #FFF;
 	display: -webkit-flex;
@@ -120,9 +137,11 @@
 	top: -10px;
 	z-index: 10;
 }
+
 #tbl_list_productos img{
 	width: 50px;
 }
+
 .imgProductoDelete{
 	width: 175px;
 }
@@ -130,6 +149,7 @@
 #imgCategoria{
 	text-align: center;
 }
+
 #imgCategoria img{
 	width: 200px;
 	margin: auto;
@@ -142,10 +162,12 @@
 	align-items: center;
 	flex-wrap: wrap;
 }
+
 #containerImages > div{
 	margin-right: 10px;
 	margin-bottom: 8px;
 }
+
 .prevImage{
 	border: 1px solid #CCC;
 	width: 120px;
@@ -154,12 +176,15 @@
 	justify-content: center;
 	align-items: center;
 }
+
 .prevImage img{
 	width: 100%;
 }
+
 .inputUploadfile{
 	display: none;
 }
+
 .btnUploadfile, .btnDeleteImage{
 	border: 0;
 	background-color: #009688;
@@ -170,23 +195,26 @@
 	cursor: pointer;
 	width: 100%;
 }
+
 .btnDeleteImage{
 	background-color: #dc3545;
 }
+
 .prevImage .loading{
 	width: 30px;
 	height: 30px;
 }
+
 #celFotos img{
 	width: 150px;
 	margin: 10px;
 }
 
-
 .divmetodpago label, #divCondiciones{
 	width: 100%;
 	display: flex;
 }
+
 .divmetodpago label input, #divCondiciones input{
 	margin-right: 15px;
 }
@@ -221,7 +249,6 @@
 	z-index: 9999;
 }
 
-
 .wrap-icon-header {
     margin-left: auto;
 }
@@ -229,7 +256,6 @@
 .icon-header-item {
     margin-left: 10px;
 }
-
 
 .menu-desktop .main-menu li a:hover {
     color: var(--primary)
@@ -244,24 +270,19 @@
     color: var(--primary)
 }
 
-
 .wrap-icon-header .cantCarrito.icon-header-item:after {
     background-color: var(--primary)
 }
-
 
 .bg1 {
 	background-color: var(--primary)
 }
 
-
 .block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3:hover{
 	background-color: var(--primary)
 }
 
-
 /* #F2B578 */
-
 
 .material-half-bg .cover {
     background-color: var(--primary);
@@ -275,7 +296,6 @@
 ::selection {
 	background-color: var(--primary)
 }
-
 
 .form-control:focus {
 	border-color: var(--primary)
@@ -322,26 +342,30 @@ a:hover{
     border-left-color:  var(--primary)
 }
 
-
-
 .toggle-flip input[type="checkbox"] + .flip-indecator::after {
-	
 	background-color: var(--primary);
-
 }
-
 
 .sweet-alert button {
 	background-color:  var(--primary) !important;
-	
 }
-
 
 .main-menu-m {
 	background-color:  var(--primary)
 }
 
-
 .block1-txt:hover {
 	background-color:  var(--primary)
+}
+
+.headerRegister, .header-primary {
+	background: var(--primary);
+}
+
+.text-primary {
+	color: var(--primary) !important;
+}
+
+.user .user-tabs .nav-link.active {
+	border-left-color: var(--primary)
 }
