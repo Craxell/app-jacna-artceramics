@@ -63,7 +63,14 @@
                 <b>Pago: </b><?= $orden['tipopago'] ?><br>
                 <b>Transacción:</b> <?= $transaccion ?> <br>
                 <b>Estado:</b> <?= $orden['status'] ?> <br>
-                <b>Total:</b> <?= SMONEY.' '. formatMoney($orden['total_pedido']) ?>
+                
+                <?php
+                $totalProductos = 0;
+                foreach ($detalle as $producto) {
+                    $totalProductos += $producto['precio'] * $producto['cantidad'];
+                }
+                ?>
+                <b>Total Productos:</b> <?= SMONEY.' '. formatMoney($totalProductos) ?>
             </div>
           </div>
           <div class="row">
@@ -97,16 +104,16 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th colspan="3" class="text-right">Sub-Total:</th>
-                        <td class="text-right"><?= SMONEY.' '. formatMoney($subtotal) ?></td>
+                      <th colspan="3" class="text-right">Sub-Total:</th>
+                      <td class="text-right"><?= SMONEY.' '. formatMoney($subtotal) ?></td>
                     </tr>
                     <tr>
-                        <th colspan="3" class="text-right">Envío:</th>
-                        <td class="text-right"><?= SMONEY.' '. formatMoney($orden['costo_envio']) ?></td>
+                      <th colspan="3" class="text-right">Envío:</th>
+                      <td class="text-right"><?= SMONEY.' '. formatMoney($orden['costo_envio']) ?></td>
                     </tr>
                     <tr>
-                        <th colspan="3" class="text-right">Total:</th>
-                        <td class="text-right"><?= SMONEY.' '. formatMoney($subtotal+$orden['costo_envio']) ?></td>
+                      <th colspan="3" class="text-right">Total:</th>
+                      <td class="text-right"><?= SMONEY.' '. formatMoney($subtotal+$orden['costo_envio']) ?></td>
                     </tr>
                 </tfoot>
               </table>
