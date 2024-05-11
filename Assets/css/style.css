@@ -1,6 +1,8 @@
 :root {
 	/* --primary: #09e025; */
-	--primary: #690644
+	--primary: #690644;
+	--secondary2:#8e2768;
+	/* --primary: linear-gradient(#e32020, #1b2bd7); */
 }
 
 .app-sidebar__user-avatar {
@@ -52,6 +54,7 @@
 
 /*Estilos login*/
 #divLoading{
+	color: var(--primary);
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -368,4 +371,76 @@ a:hover{
 
 .user .user-tabs .nav-link.active {
 	border-left-color: var(--primary)
+}
+
+@media (min-width: 768px) {
+	.sidebar-mini.sidenav-toggled .treeview:hover .app-menu__item {
+	  border-left-color: var(--primary)
+	}
+}
+
+.page-item.active .page-link {
+	background-color: var(--primary);
+	border-color: var(--primary);
+}
+
+.page-link {
+	color: var(--primary);
+}
+
+.page-link:hover {
+	color: var(--primary);
+}
+
+.arrow-slick1:hover {
+	color: var(--primary);
+}
+
+.hov-cl1:hover {
+	color: var(--primary);
+}
+
+.btn-back-to-top:hover {
+	background-color: var(--primary);
+}
+
+.btn-back-to-top {
+	background-color: var(--primary);
+}
+
+.swal-button{
+	background-color: var(--primary);
+}
+
+.hov-btn3:hover{
+	border-color: var(--primary);
+	background-color: var(--primary);
+}
+
+.btn-outline-primary{
+	color: #FFF;
+	border-color: var(--primary);
+	background-color: var(--primary);
+}
+
+
+.btn-outline-primary:hover{
+	border-color: var(--primary);
+	background-color: var(--primary);
+}
+
+.dropdown-item.active, .dropdown-item:active{
+	background-color: var(--primary);
+}
+
+
+.rs1-select2 .select2-container .select2-results__option[aria-selected="true"]{
+	background: var(--secondary2);
+}
+.rs1-select2 .select2-container .select2-results__option--highlighted[aria-selected]{
+	background: var(--primary);
+}
+
+.right-top-bar a:hover{
+	color: var(--primary);
 }

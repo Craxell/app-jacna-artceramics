@@ -1,5 +1,7 @@
 <?php 
+require_once("Models/TTipoPago.php");
 	class Pedidos extends Controllers{
+        use TTipoPago;
 		public function __construct()
 		{
 			parent::__construct();
@@ -71,8 +73,10 @@
             die();
         }
 
-        public function orden(int $idpedido){
-
+        public function orden($idpedido){
+            if(!is_numeric($idpedido)){
+                header("Location:".base_url().'/pedidos');
+            }
             if(empty($_SESSION['permisosMod']['r'])){
 				header("Location:".base_url().'/dashboard');
 			}
@@ -83,15 +87,132 @@
                 $idpersona = $_SESSION['userData']['idpersona'];
             }
 
-            $data['page_tag'] = "Pedido - Tienda Virtual";
-			$data['page_title'] = "PEDIDO <small>Tienda Virtual</small>";
+            $data['page_tag'] = "Pedido - ArtCeramics";
+			$data['page_title'] = "Pedido <small>ArtCeramics</small>";
 			$data['page_name'] = "pedido";
             $data['arrPedido'] = $this->model->selectPedido($idpedido,$idpersona);
            
 			$this->views->getView($this,"orden",$data);
 
         }
-            
-	}
 
+        public function transaccion($transaccion){
+
+            if(empty($_SESSION['permisosMod']['r'])){
+				header("Location:".base_url().'/dashboard');
+			}
+            $idpersona = "";
+            if( $_SESSION['userData']['idrol'] == RCLIENTES ){
+                $idpersona = $_SESSION['userData']['idpersona'];
+            }
+            $requestTransaccion = $this->model->selectTransPaypal($transaccion, $idpersona);
+
+            $data['page_tag'] = "Detalles de transacción - ArtCeramics";
+			$data['page_title'] = "Detalles de transacción <small>ArtCeramics</small>";
+			$data['page_name'] = "detalle_transaccion";
+            $data['objTransaccion'] = $requestTransaccion;
+            $data['page_functions_js'] = "functions_pedidos.js";
+			$this->views->getView($this,"transaccion",$data);
+        }
+
+        public function getTransaccion(string $transaccion){
+            if($_SESSION['permisosMod']['r'] and $_SESSION['userData']['idrol'] != RCLIENTES){
+                if($transaccion == ""){
+                    $arrResponse = array("status" => false, "msg" => "Datos Incorrectos.");
+                }else{
+                    $transaccion = strClean($transaccion);
+                    $requestTransaccion = $this->model->selectTransPaypal($transaccion);
+                    if(empty($requestTransaccion)){
+                        $arrResponse = array("status" => false, "msg" => "Datos no disponibles.");
+                    }else{
+                        $htmlModal = getFile("Template/Modals/modalReembolso",$requestTransaccion);
+                        $arrResponse = array("status" => true, "html" => $htmlModal);
+                    }
+                }
+                echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+            }
+            die();
+
+        }
+
+        public function setReembolso(){
+            if($_POST){
+                if($_SESSION['permisosMod']['u'] and $_SESSION['userData']['idrol'] != RCLIENTES){
+                    $transaccion = strClean($_POST['idtransaccion']);
+                    $observacion = strClean($_POST['observacion']);
+                    $requestTransaccion = $this->model->reembolsoPaypal($transaccion, $observacion);
+                    if($requestTransaccion){
+                        $arrResponse = array("status" => true, "msg" => "El reembolso se ha procesado.");
+                    }else{
+                        $arrResponse = array("status" => false, "msg" => "No es posible reembolsar.");
+                    }
+                }else{
+                    $arrResponse = array("status" => false, "msg" => "No es posible realizar el reembolso, consulta con el Administrador");
+                }
+                echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+            }
+            die();
+        }
+
+        public function getPedido(string $pedido){
+            if($_SESSION['permisosMod']['u'] and $_SESSION['userData']['idrol'] != RCLIENTES){
+                if($pedido == ""){
+                    $arrData = array("status" => false, "msg" => "Datos incorrectos.");
+                }else{
+                    $requestPedido = $this->model->selectPedido($pedido, "");
+                    if(empty($requestPedido)){
+                        $arrResponse = array("status" => false, "msg" => "Datos no disponibles.");
+                    }else{
+                        $requestPedido["tipospago"] = $this->getTiposPagoT();
+                        $htmlModal = getFile("Template/Modals/modalPedido", $requestPedido);
+                        $arrResponse = array("status" => true, "html" => $htmlModal);
+                    }
+                }
+                echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+            }
+            die();
+        }
+
+        public function setPedido(){
+            
+            if($_POST){
+                if($_SESSION['permisosMod']['u'] and $_SESSION['userData']['idrol'] != RCLIENTES){
+                    $idpedido = !empty($_POST['idpedido']) ? intval($_POST['idpedido']) : "";
+                    $estado = !empty($_POST['listEstado']) ? strClean($_POST['listEstado']) : "";
+                    $idtipopago = !empty($_POST['listTipopago']) ? intval($_POST['listTipopago']) : "";
+                    $transaccion = !empty($_POST['txtTransaccion']) ? strClean($_POST['txtTransaccion']): "";
+
+                    if($idpedido == ""){
+                        $arrResponse = array("status" => false, "msg" => "Datos incorrectos. 1");
+                    }else{
+                        if($idtipopago == ""){
+                            if($estado == ""){
+                                $arrResponse = array("status" => false, "msg" => "Datos incorrectos. 2");
+                            }else{
+                                $requestPedido = $this->model->updatePedido($idpedido, "", "", $estado);
+                                if($requestPedido){
+                                    $arrResponse = array("status" => true, "msg" => "Datos actualizados correctamente.");
+                                }else{
+                                    $arrResponse = array("status" => false, "msg" => "No es posible actualizar la informacion.");
+                                }
+                            }
+                        }else{
+                            if($transaccion == "" or $idtipopago == "" or $estado == ""){
+                                $arrResponse = array("status" => false, "msg" => "Datos incorrectos. 3");
+                            }else{
+                                $requestPedido = $this->model->updatePedido($idpedido, $transaccion, $idtipopago, $estado);
+                                if($requestPedido){
+                                    $arrResponse = array("status" => true, "msg" => "Datos actualizados correctamente.");
+                                }else{
+                                    $arrResponse = array("status" => false, "msg" => "No es posible actualizar la informacion.");
+                                }
+                            }
+                        }
+                    }
+                    echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+                }
+            }
+            die();
+        }
+	}
 ?>

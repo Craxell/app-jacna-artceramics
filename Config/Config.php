@@ -42,10 +42,10 @@
 	const NOMBRE_REMITENTE = "ArtCeramics";
 	const EMAIL_REMITENTE = "jacnasartceramics@gmail.com";
 	const NOMBRE_EMPRESA = "Art Ceramics";
-	const WEB_EMPRESA = "Art Ceramics";
+	const WEB_EMPRESA = "www.artceramics.com";
 
 	//Datos empresa
-	const DIRECCION = "La casa de juan eduardo";
+	const DIRECCION = "Atanasio Girardot Comuna 8 Cali, Valle del Cauca";
 	const CONTACTO = "(+57) 320 9255747";
 	const EMAIL_EMPRESA = "jacnasartceramics@gmail.com";
 	const EMAIL_PEDIDOS = "jacnasartceramics@gmail.com";
@@ -55,8 +55,8 @@
 	const INSTAGRAM_EMPRESA = "https://www.instagram.com/artceramicshop/";
 
 	//Tienda imagenes a mostrar
-	const CAT_SLIDER="9,10,12";
-	const CAT_BANNER="9,10,12";
+	const CAT_SLIDER="9,10";
+	const CAT_BANNER="9,10";
 
 	//Encrypt
 	const KEY = 'artCeramics';
@@ -77,6 +77,6 @@
 	const RCLIENTES = 7;
 	const RDIRECTIVOARTCERAMICS = 11;
 
-	const STATUS = array('Completo','Aprobado','Cancelado','Reembolsado','Pendiente','Entregado');
+	const STATUS_PEDIDOS = array('Completo','Aprobado','Cancelado','Reembolsado','Pendiente','Entregado');
 	
  ?>

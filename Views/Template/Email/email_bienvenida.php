@@ -93,8 +93,8 @@
 					<div class="x_sgwrap">
 						<p>Hola <?= $data['nombreUsuario']; ?></p>
 					</div>
-					<p>Bienvenido a nuestra tienda en línea.</p>
-					<p>Ahora puedes ralizar tus compras en línea sin salir de casa.</p>
+					<p>Bienvenido a nuestra tienda en linea.</p>
+					<p>Ahora puedes ralizar tus compras en linea sin salir de casa.</p>
 					<p>Accede a tu cuenta con tus credenciales:</p>
 					<p>Usuario: <strong><?= $data['email']; ?></strong></p>
 					<p>Contraseña: <strong><?= $data['password']; ?></strong></p>

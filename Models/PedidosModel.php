@@ -86,5 +86,86 @@
             }
             return $request;
         }
+
+        public function selectTransPaypal(string $idtransaccion, $idpersona = NULL){
+            $busqueda = "";
+            if($idpersona != NULL){
+                $busqueda = "AND personaid =" .$idpersona;
+            }
+            $objTransaccion = array();
+            $sql = "SELECT datospaypal FROM pedido WHERE idtransaccionpaypal = '{$idtransaccion}' ".$busqueda;
+            $requestData = $this->select($sql);
+
+            if(!empty($requestData)){
+                $objData = json_decode($requestData['datospaypal']);
+                $urlOrden = $objData->links[0]->href; 
+                $objTransaccion = CurlConnectionGet($urlOrden,"application/json",getTokenPaypal());
+            }
+            return $objTransaccion;
+        }
+
+        public function reembolsoPaypal(string $idtransaccion, string $observacion){
+            $response = false;
+            $sql = "SELECT idpedido, datospaypal FROM pedido WHERE idtransaccionpaypal = '{$idtransaccion}' ";
+            $requestData = $this->select($sql);
+            if(!empty($requestData)){
+                $objData = json_decode($requestData['datospaypal']);
+                $urlOrden = $objData->links[0]->href; 
+                $objTransaccion = CurlConnectionGet($urlOrden,"application/json",getTokenPaypal());
+                $urlReembolso = $objTransaccion->purchase_units[0]->payments->captures[0]->links[1]->href;
+                $objTransaccionPOST = CurlConnectionPost($urlReembolso,"application/json",getTokenPaypal());
+                if(isset($objTransaccionPOST->status) and $objTransaccionPOST->status == "COMPLETED"){
+
+                    $idpedido = $requestData['idpedido'];
+                    $idtransaccion = $objTransaccionPOST->id;
+                    $status = $objTransaccionPOST->status;
+                    $jsonData = json_encode($objTransaccionPOST);
+                    $observacion = $observacion;
+                    $query_insert = "INSERT INTO 
+                        reembolso(
+                        pedidoid, 
+                        idtransaccion, 
+                        datoreembolso,
+                        observacion, 
+                        status)
+                    VALUES (?,?,?,?,?)";
+                    
+                    $arrData = array(
+                        $idpedido,
+                        $idtransaccion,
+                        $jsonData,
+                        $observacion,
+                        $status
+                    );
+
+                    $request_insert = $this->insert($query_insert, $arrData);
+
+                    if($request_insert > 0 ){
+                        $updatePedido = "UPDATE pedido SET status = ? WHERE idpedido = $idpedido";
+                        $arrPedido = array("Reembolsado");
+                        $request = $this->update($updatePedido, $arrPedido);
+                        $response = true;
+                    }
+                }
+                return $response;
+            }
+        }
+
+        public function updatePedido(int $idpedido, $transaccion = NULL, $idtipopago = NULL, string $estado){
+            if($transaccion == NULL){
+                $query_insert = "UPDATE pedido SET status = ? WHERE idpedido = $idpedido ";
+                $arrData = array($estado);
+            }else{
+                $query_insert = "UPDATE pedido SET referenciacobro = ?, tipopagoid = ?, status = ? WHERE idpedido = $idpedido ";
+                $arrData = array(
+                    $transaccion,
+                    $idtipopago,
+                    $estado
+                );
+            }
+            $request_insert = $this->update($query_insert, $arrData);
+            return $request_insert;
+
+        }
 	}
  ?>

@@ -202,6 +202,7 @@ function fntSavePermisos(evnet){
             if(objData.status)
             {
                 swal("Permisos de usuario", objData.msg ,"success");
+                $('.modalPermisos').modal('hide');
             }else{
                 swal("Error", objData.msg , "error");
             }

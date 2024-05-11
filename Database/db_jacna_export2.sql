@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3307
--- Tiempo de generación: 08-05-2024 a las 00:41:54
+-- Tiempo de generación: 24-04-2024 a las 04:33:46
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -45,8 +45,7 @@ INSERT INTO `categoria` (`idcategoria`, `nombre`, `descripcion`, `portada`, `dat
 (9, 'Ceramicas', 'Ceramicas sin planta', 'img_b1cdf05a08cefe41c766f949d5c7faa2.jpg', '2024-03-15 14:48:03', '', 1),
 (10, 'Materas', 'Las mejores ceramicas', 'img_c12b1ad18f17abda7c1c7f7f84ded55c.jpg', '2024-03-15 14:48:45', '', 1),
 (11, 'Plantas', 'Planta para matera', 'img_bedbc1897a99851b21c3a44787bbe753.jpg', '2024-03-19 01:55:48', '', 0),
-(12, 'Los_devs', 'devs de artCeramics', 'portada_categoria.png', '2024-03-30 16:08:17', '', 2),
-(13, 'ad', 'asd', 'portada_categoria.png', '2024-04-24 00:17:17', '', 0);
+(12, 'Los_devs', 'devs de artCeramics', 'portada_categoria.png', '2024-03-30 16:08:17', '', 2);
 
 -- --------------------------------------------------------
 
@@ -137,11 +136,7 @@ INSERT INTO `detalle_pedido` (`id`, `pedidoid`, `productoid`, `precio`, `cantida
 (68, 43, 17, 8200.00, 1),
 (69, 44, 18, 7600.00, 1),
 (70, 45, 18, 7600.00, 1),
-(71, 45, 16, 5600.00, 1),
-(72, 46, 18, 7600.00, 4),
-(73, 46, 16, 5600.00, 1),
-(74, 47, 17, 8200.00, 3),
-(75, 48, 17, 8200.00, 1);
+(71, 45, 16, 5600.00, 1);
 
 -- --------------------------------------------------------
 
@@ -287,10 +282,7 @@ INSERT INTO `pedido` (`idpedido`, `referenciacobro`, `idtransaccionpaypal`, `dat
 (42, NULL, NULL, NULL, 1, '2024-04-16 17:52:26', 2000.00, 652.00, 2, 'asd, asd', 'Pendiente'),
 (43, NULL, NULL, NULL, 31, '2024-04-20 15:14:10', 2000.00, 47.00, 2, 'Calle 35 #13-39, Cali', 'Pendiente'),
 (44, NULL, '4YS4385768749073Y', '{\"id\":\"1R755321LM060893S\",\"intent\":\"CAPTURE\",\"status\":\"COMPLETED\",\"purchase_units\":[{\"reference_id\":\"default\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"9600.00\"},\"payee\":{\"email_address\":\"sb-j9sff30040795@business.example.com\",\"merchant_id\":\"GYNRJ3SND4NMU\"},\"description\":\"Compra de articulos en Art Ceramics por $ 9600\",\"soft_descriptor\":\"PAYPAL *TEST STORE\",\"shipping\":{\"name\":{\"full_name\":\"John Doe\"},\"address\":{\"address_line_1\":\"Free Trade Zone\",\"admin_area_2\":\"Bogota\",\"admin_area_1\":\"Bogota\",\"postal_code\":\"110111\",\"country_code\":\"CO\"}},\"payments\":{\"captures\":[{\"id\":\"4YS4385768749073Y\",\"status\":\"COMPLETED\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"9600.00\"},\"final_capture\":true,\"seller_protection\":{\"status\":\"ELIGIBLE\",\"dispute_categories\":[\"ITEM_NOT_RECEIVED\",\"UNAUTHORIZED_TRANSACTION\"]},\"create_time\":\"2024-04-21T17:28:58Z\",\"update_time\":\"2024-04-21T17:28:58Z\"}]}}],\"payer\":{\"name\":{\"given_name\":\"John\",\"surname\":\"Doe\"},\"email_address\":\"sb-bas47230041665@personal.example.com\",\"payer_id\":\"3N25YFVEDJL8A\",\"address\":{\"country_code\":\"CO\"}},\"create_time\":\"2024-04-21T17:28:00Z\",\"update_time\":\"2024-04-21T17:28:58Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v2/checkout/orders/1R755321LM060893S\",\"rel\":\"self\",\"method\":\"GET\"}]}', 30, '2024-04-21 12:28:59', 2000.00, 9.00, 1, 'Calle 40 #3N32, Cali', 'Completo'),
-(45, NULL, '8LJ52071LV573973C', '{\"id\":\"1NB83476LE8276153\",\"intent\":\"CAPTURE\",\"status\":\"COMPLETED\",\"purchase_units\":[{\"reference_id\":\"default\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"15200.00\"},\"payee\":{\"email_address\":\"sb-j9sff30040795@business.example.com\",\"merchant_id\":\"GYNRJ3SND4NMU\"},\"description\":\"Compra de articulos en Art Ceramics por $ 15200\",\"soft_descriptor\":\"PAYPAL *TEST STORE\",\"shipping\":{\"name\":{\"full_name\":\"John Doe\"},\"address\":{\"address_line_1\":\"Free Trade Zone\",\"admin_area_2\":\"Bogota\",\"admin_area_1\":\"Bogota\",\"postal_code\":\"110111\",\"country_code\":\"CO\"}},\"payments\":{\"captures\":[{\"id\":\"8LJ52071LV573973C\",\"status\":\"COMPLETED\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"15200.00\"},\"final_capture\":true,\"seller_protection\":{\"status\":\"ELIGIBLE\",\"dispute_categories\":[\"ITEM_NOT_RECEIVED\",\"UNAUTHORIZED_TRANSACTION\"]},\"create_time\":\"2024-04-21T20:57:54Z\",\"update_time\":\"2024-04-21T20:57:54Z\"}]}}],\"payer\":{\"name\":{\"given_name\":\"John\",\"surname\":\"Doe\"},\"email_address\":\"sb-bas47230041665@personal.example.com\",\"payer_id\":\"3N25YFVEDJL8A\",\"address\":{\"country_code\":\"CO\"}},\"create_time\":\"2024-04-21T20:57:41Z\",\"update_time\":\"2024-04-21T20:57:54Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v2/checkout/orders/1NB83476LE8276153\",\"rel\":\"self\",\"method\":\"GET\"}]}', 27, '2024-04-21 15:57:55', 2000.00, 15.00, 1, 'Just Us Catering, Emerson St, Palo Alto, CA 94301, Estados Unidos', 'Completo'),
-(46, NULL, '1S170193V2902854D', '{\"id\":\"2P158455JT1244848\",\"intent\":\"CAPTURE\",\"status\":\"COMPLETED\",\"purchase_units\":[{\"reference_id\":\"default\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"38000.00\"},\"payee\":{\"email_address\":\"sb-j9sff30040795@business.example.com\",\"merchant_id\":\"GYNRJ3SND4NMU\"},\"description\":\"Compra de articulos en Art Ceramics por $ 38000\",\"soft_descriptor\":\"PAYPAL *TEST STORE\",\"shipping\":{\"name\":{\"full_name\":\"John Doe\"},\"address\":{\"address_line_1\":\"Free Trade Zone\",\"admin_area_2\":\"Bogota\",\"admin_area_1\":\"Bogota\",\"postal_code\":\"110111\",\"country_code\":\"CO\"}},\"payments\":{\"captures\":[{\"id\":\"1S170193V2902854D\",\"status\":\"COMPLETED\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"38000.00\"},\"final_capture\":true,\"seller_protection\":{\"status\":\"ELIGIBLE\",\"dispute_categories\":[\"ITEM_NOT_RECEIVED\",\"UNAUTHORIZED_TRANSACTION\"]},\"create_time\":\"2024-04-24T04:54:54Z\",\"update_time\":\"2024-04-24T04:54:54Z\"}]}}],\"payer\":{\"name\":{\"given_name\":\"John\",\"surname\":\"Doe\"},\"email_address\":\"sb-bas47230041665@personal.example.com\",\"payer_id\":\"3N25YFVEDJL8A\",\"address\":{\"country_code\":\"CO\"}},\"create_time\":\"2024-04-24T04:54:48Z\",\"update_time\":\"2024-04-24T04:54:54Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v2/checkout/orders/2P158455JT1244848\",\"rel\":\"self\",\"method\":\"GET\"}]}', 1, '2024-04-23 23:54:54', 2000.00, 38.00, 1, 'calle 115D #1-25, Yumbo', 'Completo'),
-(47, NULL, '075374812F7320241', '{\"id\":\"3H102518VY8623334\",\"intent\":\"CAPTURE\",\"status\":\"COMPLETED\",\"purchase_units\":[{\"reference_id\":\"default\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"26600.00\"},\"payee\":{\"email_address\":\"sb-j9sff30040795@business.example.com\",\"merchant_id\":\"GYNRJ3SND4NMU\"},\"description\":\"Compra de articulos en Art Ceramics por $ 26600\",\"soft_descriptor\":\"PAYPAL *TEST STORE\",\"shipping\":{\"name\":{\"full_name\":\"John Doe\"},\"address\":{\"address_line_1\":\"Free Trade Zone\",\"admin_area_2\":\"Bogota\",\"admin_area_1\":\"Bogota\",\"postal_code\":\"110111\",\"country_code\":\"CO\"}},\"payments\":{\"captures\":[{\"id\":\"075374812F7320241\",\"status\":\"COMPLETED\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"26600.00\"},\"final_capture\":true,\"seller_protection\":{\"status\":\"ELIGIBLE\",\"dispute_categories\":[\"ITEM_NOT_RECEIVED\",\"UNAUTHORIZED_TRANSACTION\"]},\"create_time\":\"2024-04-28T03:22:29Z\",\"update_time\":\"2024-04-28T03:22:29Z\"}]}}],\"payer\":{\"name\":{\"given_name\":\"John\",\"surname\":\"Doe\"},\"email_address\":\"sb-bas47230041665@personal.example.com\",\"payer_id\":\"3N25YFVEDJL8A\",\"address\":{\"country_code\":\"CO\"}},\"create_time\":\"2024-04-28T03:22:11Z\",\"update_time\":\"2024-04-28T03:22:29Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v2/checkout/orders/3H102518VY8623334\",\"rel\":\"self\",\"method\":\"GET\"}]}', 30, '2024-04-27 22:22:28', 2000.00, 26.00, 1, 'asd, asd', 'Completo'),
-(48, NULL, '65R15905RX6502334', '{\"id\":\"0KH79067651785943\",\"intent\":\"CAPTURE\",\"status\":\"COMPLETED\",\"purchase_units\":[{\"reference_id\":\"default\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"12200.00\"},\"payee\":{\"email_address\":\"sb-j9sff30040795@business.example.com\",\"merchant_id\":\"GYNRJ3SND4NMU\"},\"description\":\"Compra de articulos en Art Ceramics por $ 12200\",\"soft_descriptor\":\"PAYPAL *TEST STORE\",\"shipping\":{\"name\":{\"full_name\":\"John Doe\"},\"address\":{\"address_line_1\":\"Free Trade Zone\",\"admin_area_2\":\"Bogota\",\"admin_area_1\":\"Bogota\",\"postal_code\":\"110111\",\"country_code\":\"CO\"}},\"payments\":{\"captures\":[{\"id\":\"65R15905RX6502334\",\"status\":\"COMPLETED\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"12200.00\"},\"final_capture\":true,\"seller_protection\":{\"status\":\"ELIGIBLE\",\"dispute_categories\":[\"ITEM_NOT_RECEIVED\",\"UNAUTHORIZED_TRANSACTION\"]},\"create_time\":\"2024-04-28T04:30:33Z\",\"update_time\":\"2024-04-28T04:30:33Z\"}]}}],\"payer\":{\"name\":{\"given_name\":\"John\",\"surname\":\"Doe\"},\"email_address\":\"sb-bas47230041665@personal.example.com\",\"payer_id\":\"3N25YFVEDJL8A\",\"address\":{\"country_code\":\"CO\"}},\"create_time\":\"2024-04-28T04:30:21Z\",\"update_time\":\"2024-04-28T04:30:33Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v2/checkout/orders/0KH79067651785943\",\"rel\":\"self\",\"method\":\"GET\"}]}', 1, '2024-04-27 23:30:32', 4000.00, 12.00, 1, 'wser, df', 'Completo');
+(45, NULL, '8LJ52071LV573973C', '{\"id\":\"1NB83476LE8276153\",\"intent\":\"CAPTURE\",\"status\":\"COMPLETED\",\"purchase_units\":[{\"reference_id\":\"default\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"15200.00\"},\"payee\":{\"email_address\":\"sb-j9sff30040795@business.example.com\",\"merchant_id\":\"GYNRJ3SND4NMU\"},\"description\":\"Compra de articulos en Art Ceramics por $ 15200\",\"soft_descriptor\":\"PAYPAL *TEST STORE\",\"shipping\":{\"name\":{\"full_name\":\"John Doe\"},\"address\":{\"address_line_1\":\"Free Trade Zone\",\"admin_area_2\":\"Bogota\",\"admin_area_1\":\"Bogota\",\"postal_code\":\"110111\",\"country_code\":\"CO\"}},\"payments\":{\"captures\":[{\"id\":\"8LJ52071LV573973C\",\"status\":\"COMPLETED\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"15200.00\"},\"final_capture\":true,\"seller_protection\":{\"status\":\"ELIGIBLE\",\"dispute_categories\":[\"ITEM_NOT_RECEIVED\",\"UNAUTHORIZED_TRANSACTION\"]},\"create_time\":\"2024-04-21T20:57:54Z\",\"update_time\":\"2024-04-21T20:57:54Z\"}]}}],\"payer\":{\"name\":{\"given_name\":\"John\",\"surname\":\"Doe\"},\"email_address\":\"sb-bas47230041665@personal.example.com\",\"payer_id\":\"3N25YFVEDJL8A\",\"address\":{\"country_code\":\"CO\"}},\"create_time\":\"2024-04-21T20:57:41Z\",\"update_time\":\"2024-04-21T20:57:54Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v2/checkout/orders/1NB83476LE8276153\",\"rel\":\"self\",\"method\":\"GET\"}]}', 27, '2024-04-21 15:57:55', 2000.00, 15.00, 1, 'Just Us Catering, Emerson St, Palo Alto, CA 94301, Estados Unidos', 'Completo');
 
 -- --------------------------------------------------------
 
@@ -325,6 +317,12 @@ INSERT INTO `permisos` (`idpermiso`, `rolid`, `moduloid`, `r`, `w`, `u`, `d`) VA
 (599, 3, 4, 0, 0, 0, 0),
 (600, 3, 5, 0, 0, 0, 0),
 (601, 3, 6, 0, 0, 0, 0),
+(608, 1, 1, 1, 1, 1, 1),
+(609, 1, 2, 1, 1, 1, 1),
+(610, 1, 3, 1, 1, 1, 1),
+(611, 1, 4, 1, 1, 1, 1),
+(612, 1, 5, 1, 1, 1, 1),
+(613, 1, 6, 1, 1, 1, 1),
 (668, 7, 1, 0, 0, 0, 0),
 (669, 7, 2, 0, 0, 0, 0),
 (670, 7, 3, 0, 0, 0, 0),
@@ -336,13 +334,7 @@ INSERT INTO `permisos` (`idpermiso`, `rolid`, `moduloid`, `r`, `w`, `u`, `d`) VA
 (676, 11, 3, 1, 0, 1, 1),
 (677, 11, 4, 1, 1, 1, 1),
 (678, 11, 5, 1, 0, 1, 1),
-(679, 11, 6, 1, 1, 1, 1),
-(686, 1, 1, 1, 1, 1, 1),
-(687, 1, 2, 1, 1, 1, 1),
-(688, 1, 3, 1, 1, 1, 1),
-(689, 1, 4, 1, 1, 1, 1),
-(690, 1, 5, 1, 1, 1, 1),
-(691, 1, 6, 1, 1, 1, 1);
+(679, 11, 6, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -415,21 +407,6 @@ INSERT INTO `producto` (`idproducto`, `categoriaid`, `codigo`, `nombre`, `descri
 (20, 12, '31156', 'nicolas', '<p>jasdkajksdj</p>', 650000.00, 1, '', '2024-03-30 16:12:18', '', 0),
 (21, 12, '56003', 'alejandro', '<p>jajsdja</p>', 500000.00, 1, '', '2024-03-30 16:15:54', '', 0),
 (22, 9, '23423', 'asda', '<p>asdaf</p>', 345234.00, 3, '', '2024-04-07 19:43:01', '', 0);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `reembolso`
---
-
-CREATE TABLE `reembolso` (
-  `id` bigint(20) NOT NULL,
-  `pedidoid` bigint(20) NOT NULL,
-  `idtransaccion` varchar(255) NOT NULL,
-  `datoreembolso` text NOT NULL,
-  `observacion` text NOT NULL,
-  `status` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -553,13 +530,6 @@ ALTER TABLE `producto`
   ADD KEY `categoriaid` (`categoriaid`);
 
 --
--- Indices de la tabla `reembolso`
---
-ALTER TABLE `reembolso`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `pedidoid` (`pedidoid`);
-
---
 -- Indices de la tabla `rol`
 --
 ALTER TABLE `rol`
@@ -579,13 +549,13 @@ ALTER TABLE `tipopago`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `idcategoria` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idcategoria` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_pedido`
 --
 ALTER TABLE `detalle_pedido`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_temp`
@@ -609,13 +579,13 @@ ALTER TABLE `modulo`
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `idpedido` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `idpedido` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
 --
 ALTER TABLE `permisos`
-  MODIFY `idpermiso` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=692;
+  MODIFY `idpermiso` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=680;
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
@@ -628,12 +598,6 @@ ALTER TABLE `persona`
 --
 ALTER TABLE `producto`
   MODIFY `idproducto` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT de la tabla `reembolso`
---
-ALTER TABLE `reembolso`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
@@ -695,12 +659,6 @@ ALTER TABLE `persona`
 --
 ALTER TABLE `producto`
   ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`categoriaid`) REFERENCES `categoria` (`idcategoria`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `reembolso`
---
-ALTER TABLE `reembolso`
-  ADD CONSTRAINT `reembolso_ibfk_1` FOREIGN KEY (`pedidoid`) REFERENCES `pedido` (`idpedido`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

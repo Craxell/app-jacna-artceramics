@@ -6,12 +6,6 @@
 	
  ?>
 
-<?php
-
-	// session_destroy();
-	// echo "La sesión ha sido destruida correctamente.";
-?>
-
 	<!-- Slider -->
 	<section class="section-slide">
 		<div class="wrap-slick1">
