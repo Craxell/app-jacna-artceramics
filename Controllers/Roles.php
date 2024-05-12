@@ -20,7 +20,7 @@
 				header("Location:".base_url().'/dashboard');
 			}
 			$data['page_id'] = 3;
-			$data['page_tag'] = "Roles Usuario";
+			$data['page_tag'] = "Roles";
 			$data['page_name'] = "rol_usuario";
 			$data['page_title'] = "Roles Usuario <small>ArtCeramics</small>";
 			$data['page_functions_js'] = "functions_roles.js";

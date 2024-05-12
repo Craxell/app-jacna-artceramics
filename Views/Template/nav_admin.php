@@ -9,7 +9,7 @@
         </div>
       </div>
       <ul class="app-menu">
-        <?php if(!empty($_SESSION['permisos'][1]['r'])){ ?>
+        <?php if(!empty($_SESSION['permisos'][MDASHBOARD]['r'])){ ?>
         <li>
             <a class="app-menu__item" href="<?= base_url(); ?>/dashboard">
                 <img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/monitor.png">
@@ -17,12 +17,13 @@
             </a>
         </li>
         <?php } ?>
-        <?php if(!empty($_SESSION['permisos'][2]['r'])){ ?>
+        <?php if(!empty($_SESSION['permisos'][MUSUARIOS]['r'])){ ?>
         <li class="treeview">
             <a class="app-menu__item" href="#" data-toggle="treeview">
                 <img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/usuarios.png">
-                <span class="app-menu__label">Usuarios</span>
+                <span class="app-menu__label" id="al2">Usuarios</span>
                 <i class="treeview-indicator fa fa-angle-right"></i>
+                
             </a>
             <ul class="treeview-menu">
                 <li><a class="treeview-item" href="<?= base_url(); ?>/usuarios"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/usuarios.png"></i> Usuarios</a></li>
@@ -30,7 +31,7 @@
             </ul>
         </li>
         <?php } ?>
-        <?php if(!empty($_SESSION['permisos'][3]['r'])){ ?>
+        <?php if(!empty($_SESSION['permisos'][MCLIENTES]['r'])){ ?>
         <li>
             <a class="app-menu__item" href="<?= base_url(); ?>/clientes">
             <img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/apreton-de-manos.png">
@@ -38,7 +39,7 @@
             </a>
         </li>
         <?php } ?>
-        <?php if(!empty($_SESSION['permisos'][4]['r']) || !empty($_SESSION['permisos'][6]['r'])){ ?>
+        <?php if(!empty($_SESSION['permisos'][MPRODUCTOS]['r']) || !empty($_SESSION['permisos'][MCATEGORIAS]['r'])){ ?>
         <li class="treeview">
             <a class="app-menu__item" href="#" data-toggle="treeview">
                 <img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/bolsa.png">
@@ -46,16 +47,16 @@
                 <i class="treeview-indicator fa fa-angle-right"></i>
             </a>
             <ul class="treeview-menu">
-                <?php if(!empty($_SESSION['permisos'][4]['r'])){ ?>
+                <?php if(!empty($_SESSION['permisos'][MPRODUCTOS]['r'])){ ?>
                 <li><a class="treeview-item" href="<?= base_url(); ?>/productos"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/inventario.png"> Productos</a></li>
                 <?php } ?>
-                <?php if(!empty($_SESSION['permisos'][6]['r'])){ ?>
+                <?php if(!empty($_SESSION['permisos'][MCATEGORIAS]['r'])){ ?>
                 <li><a class="treeview-item" href="<?= base_url(); ?>/categorias"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/categorias.png"> Categorías</a></li>
                 <?php } ?>
             </ul>
         </li>
         <?php } ?>
-        <?php if(!empty($_SESSION['permisos'][5]['r'])){ ?>
+        <?php if(!empty($_SESSION['permisos'][MPEDIDOS]['r'])){ ?>
         <li>
             <a class="app-menu__item" href="<?= base_url(); ?>/pedidos">
             <img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/entrega-de-pedidos.png">

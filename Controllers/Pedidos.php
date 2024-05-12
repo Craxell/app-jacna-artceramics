@@ -21,7 +21,7 @@ require_once("Models/TTipoPago.php");
 				header("Location:".base_url().'/dashboard');
 			}
 			$data['page_tag'] = "Pedidos";
-			$data['page_title'] = "PEDIDOS <small>ArtCeramics</small>";
+			$data['page_title'] = "Pedidos <small>ArtCeramics</small>";
 			$data['page_name'] = "pedidos";
 			$data['page_functions_js'] = "functions_pedidos.js";
 			$this->views->getView($this,"pedidos",$data);
