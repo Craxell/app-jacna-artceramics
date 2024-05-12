@@ -16,7 +16,7 @@
 		public function login()
 		{
 			$data['page_tag'] = "Login - ArtCeramics";
-			$data['page_title'] = "Login - ArtCeramics";
+			$data['page_title'] = "ArtCeramics";
 			$data['page_name'] = "login";
 			$data['page_functions_js'] = "functions_login.js";
 			$this->views->getView($this,"login",$data);

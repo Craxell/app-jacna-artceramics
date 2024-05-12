@@ -18,7 +18,7 @@ headerTienda($data);
 
   <hr class="my-4">
   <p>Estaremos en contacto para coordinar la entrega.</p>
-  <p>Puedes ver el estado de tu pedido en la seccion de pedidos de tu usuario (esto aun no esta)</p>
+  <p>Puedes ver el estado de tu pedido en la seccion de pedidos de tu usuario</p>
   <br>
   <a class="btn btn-success btn-lg" href="<?= base_url(); ?>" role="button">Continuar</a>
 </div>

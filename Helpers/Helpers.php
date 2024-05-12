@@ -60,32 +60,6 @@
         return $file;
     }
 
-
-    //Envio de correos
-    // function sendEmail1($data,$template)
-    // {
-    //     $asunto = $data['asunto'];
-    //     $emailDestino = $data['email'];
-    //     $empresa = NOMBRE_REMITENTE;
-    //     $remitente = EMAIL_REMITENTE;
-
-    //     $emailCopia = !empty($data['emailCopia']) ? $data['emailCopia'] : "";
-
-    //     //ENVIO DE CORREO
-    //     $de = "MIME-Version: 1.0\r\n";
-    //     $de .= "Content-type: text/html; charset=UTF-8\r\n";
-    //     $de .= "From: {$empresa} <{$remitente}>\r\n";
-    //     $de .= "Bcc: $emailCopia\r\n";
-
-    //     ob_start();
-    //     require_once("Views/Template/Email/".$template.".php");
-    //     $mensaje = ob_get_clean();
-    //     $send = mail($emailDestino, $asunto, $mensaje, $de);
-    //     return $send;
-    // }
-
-
-
     function sendEmail($data, $template){
 
         $asunto = $data['asunto'];
