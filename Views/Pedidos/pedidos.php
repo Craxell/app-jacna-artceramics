@@ -6,10 +6,10 @@
     <main class="app-content">
       <div class="app-title">
         <div>
-            <h1><i class="fas fa-box"></i> <?= $data['page_title'] ?></h1>
+            <h1><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/entrega-de-pedidos.png"> <?= $data['page_title'] ?></h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item"><img class="iconDashboard3" src="<?= media();?>/images/Icons/x512/home.png"></li>
           <li class="breadcrumb-item"><a href="<?= base_url(); ?>/pedidos"><?= $data['page_title'] ?></a></li>
         </ul>
       </div>

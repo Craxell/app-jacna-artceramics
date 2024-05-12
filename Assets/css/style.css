@@ -444,3 +444,20 @@ a:hover{
 .right-top-bar a:hover{
 	color: var(--primary);
 }
+
+.iconDashboard {
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    height: auto;
+}
+
+.iconDashboard2{
+    margin: 5px;
+    width: 30px;
+}
+
+.iconDashboard3{
+    margin: 5px;
+    width: 25px;
+}

@@ -28,9 +28,9 @@
         <!-- User Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
-            <li><a class="dropdown-item" href="<?= base_url(); ?>/opciones"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-            <li><a class="dropdown-item" href="<?= base_url(); ?>/usuarios/perfil"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-            <li><a class="dropdown-item" href="<?= base_url(); ?>/logout"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+            <li><a class="dropdown-item" href="<?= base_url(); ?>/opciones"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/ajustes.png"> Settings</a></li>
+            <li><a class="dropdown-item" href="<?= base_url(); ?>/usuarios/perfil"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/portafolio-profesional.png"> Profile</a></li>
+            <li><a class="dropdown-item" href="<?= base_url(); ?>/logout"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/salida.png"> Logout</a></li>
           </ul>
         </li>
       </ul>
