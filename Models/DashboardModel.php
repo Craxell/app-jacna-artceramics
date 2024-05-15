@@ -32,5 +32,81 @@
             $total = $request['totalPedidos'];
             return $total;
         }
+
+        public function lastOrders(){
+            $sql = "SELECT 
+                p.idpedido,
+                CONCAT(pr.nombres,' ',pr.apellidos) as nombre,
+                (
+                    SELECT SUM(d.precio * d.cantidad)
+                    FROM detalle_pedido d
+                    WHERE d.pedidoid = p.idpedido
+                ) as precio,
+                tp.tipopago,
+                p.status
+            FROM 
+                pedido p
+            INNER JOIN 
+                persona pr on p.personaid = pr.idpersona
+            INNER JOIN 
+                tipopago tp on p.tipopagoid = tp.idtipopago
+            ORDER BY 
+                p.idpedido DESC
+            LIMIT 7";
+        
+            $request = $this->select_all($sql);
+            return $request;
+        }
+
+        public function selectPagosMes(int $year, int $month){
+            $sql = "SELECT
+                p.tipopagoid, tp.tipopago, COUNT(p.idpedido) 
+                AS cantidad_ventas, SUM(d.precio * d.cantidad) 
+                AS total_ventas  
+            FROM pedido p 
+            INNER JOIN detalle_pedido d 
+            ON p.idpedido = d.pedidoid 
+            INNER JOIN tipopago tp
+            ON p.tipopagoid = tp.idtipopago
+            WHERE MONTH(p.fecha) = $month AND YEAR(p.fecha) = $year
+            GROUP BY tipopagoid";
+
+            $pagos = $this->select_all($sql);
+            $meses = Meses();
+            $arrData = array('year' => $year, 'month' => $meses[intval($month-1)], 'tipospago' =>$pagos);
+            return $arrData;
+        }
+
+        public function selectVentasMes(int $year, int $month){
+            $totalVentasMes = 0;
+            $arrVentaDias = array();
+            $dias = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+            $n_dia = 1;
+            
+            for ($i=0; $i < $dias; $i++) {
+                $date= date_create($year.'-'.$month.'-'.$n_dia);
+                $fechaVenta = date_format($date,"Y-m-d");
+
+                $sql = "SELECT 
+                    DAY(p.fecha) AS dia, 
+                    COUNT(p.idpedido) AS cantidad, 
+                    SUM(d.precio * d.cantidad) AS total
+                FROM 
+                    pedido p 
+                INNER JOIN 
+                    detalle_pedido d ON p.idpedido = d.pedidoid 
+                WHERE DATE(p.fecha) = '$fechaVenta' AND status = 'Completo'";
+
+                $ventaDia = $this->select($sql);
+                $ventaDia['dia'] = $n_dia;
+                $ventaDia['total'] = $ventaDia['total'] == "" ? 0 : $ventaDia['total'];
+                $totalVentasMes += $ventaDia['total'];
+                array_push($arrVentaDias, $ventaDia);
+                $n_dia++;
+            }
+            $meses = Meses();
+            $arrData = array('year' => $year, 'month' => $meses[intval($month-1)], 'total' => $totalVentasMes, 'ventas' =>$arrVentaDias);
+            return $arrData;
+        }
 	}
  ?>

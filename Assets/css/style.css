@@ -6,10 +6,20 @@
 }
 
 .app-sidebar__user-avatar {
-    width: 48px;
+    width: 60px;
     background: gray;
     padding: 6px;
 }
+
+.app.sidebar-mini.pace-done.sidenav-toggled .app-sidebar__user {
+    display: flex;
+}
+
+.app.sidebar-mini.pace-done.sidenav-toggled .app-sidebar__user img.app-sidebar__user-avatar {
+    width: 55px;
+	height: 55px;
+}
+
 
 .app-sidebar__toggle{
 	display: -webkit-flex;
@@ -423,7 +433,6 @@ a:hover{
 	background-color: var(--primary);
 }
 
-
 .btn-outline-primary:hover{
 	border-color: var(--primary);
 	background-color: var(--primary);
@@ -432,7 +441,6 @@ a:hover{
 .dropdown-item.active, .dropdown-item:active{
 	background-color: var(--primary);
 }
-
 
 .rs1-select2 .select2-container .select2-results__option[aria-selected="true"]{
 	background: var(--secondary2);
@@ -489,10 +497,9 @@ a:hover{
 	}
 
 	#al2{
-		min-width: 179.3px;
+		min-width: 180.3px;
 	}
 }
-
 
 @media (min-width: 768px) {
 	.app-sidebar{
@@ -510,12 +517,39 @@ a:hover{
 	padding: 5px 75px 5px 40px;
 }
 
-
 .app-breadcrumb{
 	font-size: 20px;
 }
 
-
 .app-content{
 	padding-left: 35px;
+}
+
+.submenu-item{
+	margin-left: 30px;
+}
+
+.treeview-menu .treeview-item {
+    display: flex;
+    align-items: center;
+}
+
+.treeview-menu .submenu-text {
+    margin-left: 10px;
+}
+
+.app.sidebar-mini.pace-done.sidenav-toggled .treeview-menu {
+    transform: translateX(30px);
+	
+}
+
+.app.sidebar-mini.pace-done.sidenav-toggled .treeview-menu .treeview-item.c2 {
+    transform: translateX(0px);
+	padding: 5px 75px 5px 10px;
+}
+
+.app.sidebar-mini.pace-done.sidenav-toggled .app-menu__label {
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }

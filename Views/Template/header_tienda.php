@@ -63,11 +63,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
-						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
+						<a href="<?= base_url(); ?>/login" class="flex-c-m trans-04 p-lr-25">
 							Mi cuenta
 						</a>
 
@@ -118,9 +114,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m">
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-							<i class="zmdi zmdi-search"></i>
-						</div>
+						
 
 						<?php if($data['page_name'] != "carrito" and $data['page_name'] != "procesarpago") { ?>
 
@@ -144,9 +138,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 
 			<!-- Icon header -->
 			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-					<i class="zmdi zmdi-search"></i>
-				</div>
+				
 				<?php if($data['page_name'] != "carrito" and $data['page_name'] != "procesarpago") { ?>
 					<div class="cantCarrito icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="<?= $cantCarrito; ?>">
 						<i class="zmdi zmdi-shopping-cart"></i>
@@ -180,15 +172,12 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 
 				<li>
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Help & FAQs
-						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
+						<a href="<?= base_url(); ?>/login"" class="flex-c-m p-lr-10 trans-04">
 							Mi cuenta
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
+						<a href="<?= base_url(); ?>/LogoutShop" class="flex-c-m trans-04 p-lr-25">
 							Salir
 						</a>
 					</div>
@@ -218,21 +207,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 			</ul>
 		</div>
 
-		<!-- Modal Search -->
-		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-			<div class="container-search-header">
-				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="<?= media() ?>/tienda/images/icons/icon-close2.png" alt="CLOSE">
-				</button>
-
-				<form class="wrap-search-header flex-w p-l-15">
-					<button class="flex-c-m trans-04">
-						<i class="zmdi zmdi-search"></i>
-					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
-				</form>
-			</div>
-		</div>
+		
 	</header>
 
 

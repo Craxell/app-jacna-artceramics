@@ -1,7 +1,7 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<?= media();?>/images/avatar.png" alt="User Image">
+      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<?= media();?>/images/avatar2.png" alt="User Image">
         <div>
           <p class="app-sidebar__user-name"><?= $_SESSION['userData']['nombres']; ?></p>
           <p class="app-sidebar__user-name"><?= $_SESSION['userData']['apellidos']; ?></p>
@@ -25,10 +25,13 @@
                 <i class="treeview-indicator fa fa-angle-right"></i>
                 
             </a>
-            <ul class="treeview-menu">
-                <li><a class="treeview-item" href="<?= base_url(); ?>/usuarios"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/usuarios.png"></i> Usuarios</a></li>
-                <li><a class="treeview-item" href="<?= base_url(); ?>/roles"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/permisos.png"> Roles</a></li>
-            </ul>
+            <div">
+                <ul class="treeview-menu">
+                    <a class="treeview-item c2" href="<?= base_url(); ?>/usuarios"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/usuarios.png"></i> Usuarios</a>
+                    <a class="treeview-item c2" href="<?= base_url(); ?>/roles"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/permisos.png"> Roles</a>
+                </ul>
+            </div>
+            
         </li>
         <?php } ?>
         <?php if(!empty($_SESSION['permisos'][MCLIENTES]['r'])){ ?>
@@ -48,10 +51,10 @@
             </a>
             <ul class="treeview-menu">
                 <?php if(!empty($_SESSION['permisos'][MPRODUCTOS]['r'])){ ?>
-                <li><a class="treeview-item" href="<?= base_url(); ?>/productos"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/inventario.png"> Productos</a></li>
+                <a class="treeview-item c2" href="<?= base_url(); ?>/productos"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/inventario.png"> Productos</a>
                 <?php } ?>
                 <?php if(!empty($_SESSION['permisos'][MCATEGORIAS]['r'])){ ?>
-                <li><a class="treeview-item" href="<?= base_url(); ?>/categorias"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/categorias.png"> Categorías</a></li>
+                <a class="treeview-item c2" href="<?= base_url(); ?>/categorias"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/categorias.png"> Categorías</a>
                 <?php } ?>
             </ul>
         </li>

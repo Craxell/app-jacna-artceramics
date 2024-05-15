@@ -3,7 +3,7 @@
     //const ROOT_URL ="http://192.168.0.28/";
 	//Se usa este cuando se abre para los dispositivos locales, se pone la ip local del pc que hace de server
 
-    const ROOT_URL="https://a4f1-186-86-52-156.ngrok-free.app/";
+    const ROOT_URL="https://6166-186-86-52-156.ngrok-free.app/";
 
     //Define  url base
     const BASE_URL = ROOT_URL."proyectoIngSoftware/";
