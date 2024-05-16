@@ -137,14 +137,14 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-md-12">
 			<div class="tile">
 				<h3 class="tile-title">Ventas por año</h3>
 				<div id="graficaAnio"></div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 
 </main>
