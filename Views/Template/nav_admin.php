@@ -71,7 +71,7 @@
          <li>
             <a class="app-menu__item" href="<?= base_url(); ?>">
             <img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/mercado.png">
-                <span class="app-menu__label">Tienda Virtual</span>
+                <span class="app-menu__label">Art Ceramics</span>
             </a>
         </li>
 

@@ -137,6 +137,9 @@
 			</div>
 		</div>
 	</section>
+	<div class="map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3447.094124255984!2d-76.50922761412399!3d3.4447717583913433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a6565a32d5a3%3A0xecd05ca010fe8978!2sAtanasio%20Girardot%2C%20Comuna%208%2C%20Cali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1716016527461!5m2!1ses!2sco" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
 <?php 
 	footerTienda($data);
  ?>
