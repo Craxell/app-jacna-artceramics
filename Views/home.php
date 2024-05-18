@@ -101,7 +101,7 @@
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="<?= $portada ?>" alt="<?= $arrProductos[$p]['nombre'] ?>">
+							<img class="imgResize" src="<?= $portada ?>" alt="<?= $arrProductos[$p]['nombre'] ?>">
 							<a href="<?= base_url().'/tienda/producto/'.$arrProductos[$p]['nombre']; ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 								Ver producto
 							</a>

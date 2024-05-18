@@ -3,7 +3,7 @@
     //const ROOT_URL ="http://192.168.0.28/";
 	//Se usa este cuando se abre para los dispositivos locales, se pone la ip local del pc que hace de server
 
-    const ROOT_URL="http://localhost/";
+    const ROOT_URL="http://192.168.0.28/";
 
     //Define  url base
     const BASE_URL = ROOT_URL."proyectoIngSoftware/";
@@ -49,6 +49,8 @@
 	const CONTACTO = "(+57) 320 9255747";
 	const EMAIL_EMPRESA = "jacnasartceramics@gmail.com";
 	const EMAIL_PEDIDOS = "jacnasartceramics@gmail.com";
+	const PAIS_EMPRESA = "Colombia";
+	const CIUDAD_EMPRESA = "Cali";
 
 	//Redes Empresa
 	const WHATSAPP_EMPRESA = "https://wa.me/573209255747";

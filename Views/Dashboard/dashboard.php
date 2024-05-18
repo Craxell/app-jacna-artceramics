@@ -131,20 +131,29 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="tile">
-				<h3 class="tile-title">Ventas en el mes</h3>
+				<h3 class="tile-title">Ventas completas en el mes</h3>
 				<div id="graficaMes"></div>
 			</div>
 		</div>
 	</div>
 
-	<!-- <div class="row">
+  <div class="row">
 		<div class="col-md-12">
 			<div class="tile">
-				<h3 class="tile-title">Ventas por año</h3>
+				<h3 class="tile-title">Total de ventas en el mes</h3>
+				<div id="graficaMesTotal"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="tile">
+				<h3 class="tile-title">Ventas en el año</h3>
 				<div id="graficaAnio"></div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 
 
 </main>
@@ -207,7 +216,7 @@ Highcharts.chart('graficaMes', {
     text: '<?= $data['ventasMDia']['month'].' '.$data['ventasMDia']['year']; ?>'
   },
   subtitle: {
-    text: 'Total de ventas completadas en <?= NOMBRE_EMPRESA . ': ' . formatMoney($data['ventasMDia']['total']) ?>'
+    text: 'Total de ventas completas en <?= NOMBRE_EMPRESA . ': ' . formatMoney($data['ventasMDia']['total']) ?>'
   },
   xAxis: {
     type: 'category',
@@ -261,56 +270,128 @@ Highcharts.chart('graficaMes', {
   }]
 });
 
-	
-	
-Highcharts.chart('graficaAnio', {
+Highcharts.chart('graficaMesTotal', {
   chart: {
-    type: 'area'
-  },
-  accessibility: {
-    description: 'Image description: An area chart compares the nuclear stockpiles of the USA and the USSR/Russia between 1945 and 2017. The number of nuclear weapons is plotted on the Y-axis and the years on the X-axis. The chart is interactive, and the year-on-year stockpile levels can be traced for each country. The US has a stockpile of 6 nuclear weapons at the dawn of the nuclear age in 1945. This number has gradually increased to 369 by 1950 when the USSR enters the arms race with 6 weapons. At this point, the US starts to rapidly build its stockpile culminating in 32,040 warheads by 1966 compared to the USSR’s 7,089. From this peak in 1966, the US stockpile gradually decreases as the USSR’s stockpile expands. By 1978 the USSR has closed the nuclear gap at 25,393. The USSR stockpile continues to grow until it reaches a peak of 45,000 in 1986 compared to the US arsenal of 24,401. From 1986, the nuclear stockpiles of both countries start to fall. By 2000, the numbers have fallen to 10,577 and 21,000 for the US and Russia, respectively. The decreases continue until 2017 at which point the US holds 4,018 weapons compared to Russia’s 4,500.'
+    type: 'column'
   },
   title: {
-    text: 'US and USSR nuclear stockpiles'
+    text: '<?= $data['ventasMDiaTotales']['month'].' '.$data['ventasMDiaTotales']['year']; ?>'
   },
   subtitle: {
-    text: 'Source: <a href="https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/" ' +
-    'target="_blank">FAS</a>'
+    text: 'Total de ventas en <?= NOMBRE_EMPRESA . ': ' . formatMoney($data['ventasMDiaTotales']['total']) ?>'
   },
   xAxis: {
-    allowDecimals: false,
-    accessibility: {
-      rangeDescription: 'Range: 1940 to 2017.'
-    }
-  },
-  yAxis: {
-    title: {
-      text: 'Nuclear weapon states'
-    }
-  },
-  tooltip: {
-    pointFormat: '{series.name} had stockpiled <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
-  },
-  plotOptions: {
-    area: {
-      pointStart: 1940,
-      marker: {
-        enabled: false,
-        symbol: 'circle',
-        radius: 2,
-        states: {
-          hover: {
-            enabled: true
-          }
-        }
+    type: 'category',
+    labels: {
+      autoRotation: [-45, -90],
+      style: {
+        fontSize: '13px',
+        fontFamily: 'Verdana, sans-serif'
       }
     }
   },
+  yAxis: {
+    min: 0,
+    title: {
+      text: ''
+    }
+  },
+  legend: {
+    enabled: false
+  },
+  tooltip: {
+    pointFormat: 'Ventas del día: <b>{point.y:,.0f} COP</b>'
+  },
   series: [{
-    name: 'USA',
-    data: [5113, 5066, 4897, 4881, 4804, 4717, 4571, 4018, 3822, 3785, 3805,3750, 3708, 3708]
-      
-  }],
+    name: 'Ventas',
+    colors: [  
+          '#6225ed', '#5b30e7','#533be1', '#4c46db','#4551d5', 
+          '#3e5ccf','#3667c9', '#2f72c3','#277dbd', '#1f88b7', 
+          '#1693b1', '#0a9eaa','#03c69b',  '#00f194','#9b20d9', 
+          '#9215ac'
+        ],
+        colorByPoint: true,
+        groupPadding: 0,
+    data: [
+      <?php foreach($data['ventasMDiaTotales']['ventas'] as $dia) : ?>
+        ['<?= "Día " . $dia['dia'] ?>', <?= $dia['total'] ?>],
+      <?php endforeach; ?>
+    ],
+    dataLabels: {
+      enabled: true,
+      rotation: -90,
+      color: '#FFFFFF',
+      inside: true,
+      verticalAlign: 'top',
+      format: '{point.y:,.0f} COP', // Un decimal
+      style: {
+        fontSize: '13px',
+        fontFamily: 'Verdana, sans-serif'
+      }
+    }
+  }]
 });
-	
+
+Highcharts.chart('graficaAnio', {
+  chart: {
+    type: 'column'
+  },
+  title: {
+    text: '<?= 'Año ' . $data['ventasYear']['year'] ?>'
+  },
+  subtitle: {
+    text: 'Total de ventas en el año: <?= formatMoney($data['ventasYear']['total']) ?>'
+  },
+  xAxis: {
+    type: 'category',
+    labels: {
+      autoRotation: [-45, -90],
+      style: {
+        fontSize: '13px',
+        fontFamily: 'Verdana, sans-serif'
+      }
+    }
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: ''
+    }
+  },
+  legend: {
+    enabled: false
+  },
+  tooltip: {
+    pointFormat: 'Ventas del mes: <b>{point.y:,.0f} COP</b>'
+  },
+  series: [{
+    name: 'Ventas',
+    data: [
+      <?php foreach($data['ventasYear']['month'] as $mes) : ?>
+        { name: '<?= $mes['mes'] ?>', y: <?= $mes['venta'] ?> },
+      <?php endforeach; ?>
+    ],
+    colors: [  
+      '#6225ed', '#5b30e7','#533be1', '#4c46db','#4551d5', 
+      '#3e5ccf','#3667c9', '#2f72c3','#277dbd', '#1f88b7', 
+      '#1693b1', '#0a9eaa','#03c69b',  '#00f194','#9b20d9', 
+      '#9215ac'
+    ],
+    colorByPoint: true,
+    dataLabels: {
+      enabled: true,
+      rotation: -90,
+      color: '#FFFFFF',
+      inside: true,
+      verticalAlign: 'top',
+      format: '{point.y:,.0f} COP', // Un decimal
+      style: {
+        fontSize: '13px',
+        fontFamily: 'Verdana, sans-serif'
+      }
+    }
+  }]
+});
+
+
 </script>

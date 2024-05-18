@@ -76,14 +76,47 @@ $total = $subtotal + COSTOENVIO;
         </button>
       </div>
       <div class="modal-body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit similique officiis veniam excepturi accusantium 
-		cumque repellendus harum, magni asperiores dolore nihil dolor, praesentium alias rem placeat voluptatum ex reprehenderit ipsam.</p>
-		<br>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi recusandae molestias</p>
+        <p class="terminosTxt">Bienvenido a <?= NOMBRE_EMPRESA ?>. Al acceder y utilizar este sitio web, 
+			aceptas los presentes términos y condiciones que rigen nuestros servicios, 
+			así como las políticas de privacidad publicadas en este sitio. 
+			Si no estás de acuerdo con alguna de estas condiciones, te pedimos que no uses nuestros servicios.</p><br>
+
+		<p class="terminosTxt">Este sitio web es propiedad y está operado por <?= NOMBRE_EMPRESA ?>. 
+			Nos reservamos el derecho de revisar y actualizar estos términos en cualquier momento. 
+			Al continuar utilizando nuestro sitio después de que se hayan realizado modificaciones, 
+			aceptas quedar vinculado a los nuevos términos y condiciones actualizados.</p><br>
+
+		<p class="terminosTxt">Al realizar un pedido en nuestra tienda online, aceptas proporcionar información verdadera, exacta, actualizada 
+			y completa sobre ti mismo según sea requerida en el proceso de compra. Todas las compras están sujetas a la disponibilidad
+			de productos y la aceptación de los pagos por parte de nuestra empresa. Nos reservamos el derecho de rechazar cualquier pedido.</p><br>
+
+		<p class="terminosTxt">Los precios de los productos mostrados en el sitio web están vigentes y son finales al momento de iniciar tu pedido. 
+			Se te notificarán cargos de envío y cualquier otro cargo adicional que pueda corresponder a tu pedido, los cuales 
+			deberán ser aceptados por ti para completar la transacción.</p><br>
+
+		<p class="terminosTxt">Ofrecemos la opción de devolución siempre que la compra se haya realizado por PayPal. 
+			El artículo debe estar sin usar, en las mismas condiciones en que fue recibido 
+			en su empaque original. Se comprobará esta información mediante alguno de nuestros empleados.</p><br>
+
+		<p class="terminosTxt">Protegemos tus datos personales de acuerdo con nuestra rigurosa Política de Privacidad. 
+			No vendemos ni compartimos tu información personal con terceros con fines comerciales. 
+			Utilizamos tecnologías de cifrado seguras para proteger la transmisión de información 
+			sensible como lo son las contraseñas y datos de transacciones de pago.</p><br>
+
+		<p class="terminosTxt">En ningún caso <?= NOMBRE_EMPRESA ?> será responsable por daños directos, indirectos, especiales o 
+			consecuentes que resulten del uso o la imposibilidad de utilizar este sitio web o sus contenidos.
+			Estas limitaciones se aplicarán independientemente de si <?= NOMBRE_EMPRESA ?> ha sido advertido o no de la posibilidad de tales daños.</p><br>
+
+		<p class="terminosTxt">Estos términos y condiciones se regirán e interpretarán de acuerdo con las leyes de 
+			<?= PAIS_EMPRESA ?>. Al utilizar este sitio web, aceptas la jurisdicción exclusiva 
+			de los tribunales de <?= PAIS_EMPRESA.', '.CIUDAD_EMPRESA ?> para cualquier disputa que pudiese surgir.</p><br>
+
+		<p class="terminosTxt">Si tienes alguna pregunta sobre estos términos y condiciones 
+			o nuestras políticas, no dudes en contactarnos a través de la información de contacto en la parte inferior de nuestra tienda online</p>
+		
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

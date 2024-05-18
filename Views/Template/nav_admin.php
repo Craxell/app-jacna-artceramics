@@ -67,6 +67,14 @@
             </a>
         </li>
          <?php } ?>
+        
+         <li>
+            <a class="app-menu__item" href="<?= base_url(); ?>">
+            <img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/mercado.png">
+                <span class="app-menu__label">Tienda Virtual</span>
+            </a>
+        </li>
+
         <li>
             <a class="app-menu__item" href="<?= base_url(); ?>/logout">
             <img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/salida.png">

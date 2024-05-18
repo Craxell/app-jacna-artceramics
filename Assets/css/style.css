@@ -553,3 +553,21 @@ a:hover{
     align-items: center;
     justify-content: left;
 }
+
+
+.imgResize{
+	width: 320px;
+	height: 460px;
+	object-fit: cover;
+}
+
+
+.imgResize2{
+	width: 320px;
+	height: 650px;
+	object-fit: cover;
+}
+
+.terminosTxt{
+	text-align: justify;
+}

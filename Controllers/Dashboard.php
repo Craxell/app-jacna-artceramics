@@ -29,9 +29,10 @@
 			$month = date('m');
 			$data['pagosMes'] = $this->model->selectPagosMes($year, $month);
 			$data['ventasMDia'] = $this->model->selectVentasMes($year, $month);
+			$data['ventasMDiaTotales'] = $this->model->selectVentasTotalMes($year, $month);
+			$data['ventasYear'] = $this->model->selectVentasYear($year);
 
-			// dep($data['ventasMDia']);exit;
-
+			//dep($data['ventasYear']);exit;
 
 			$this->views->getView($this,"dashboard",$data);
 		}

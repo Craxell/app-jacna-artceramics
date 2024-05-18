@@ -28,7 +28,6 @@
         <!-- User Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
-            <li><a class="dropdown-item" href="<?= base_url(); ?>/opciones"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/ajustes.png"> Settings</a></li>
             <li><a class="dropdown-item" href="<?= base_url(); ?>/usuarios/perfil"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/portafolio-profesional.png"> Profile</a></li>
             <li><a class="dropdown-item" href="<?= base_url(); ?>/logout"><img class="iconDashboard2" src="<?= media();?>/images/Icons/x512/salida.png"> Logout</a></li>
           </ul>

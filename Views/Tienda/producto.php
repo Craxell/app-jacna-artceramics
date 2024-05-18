@@ -40,7 +40,7 @@ $arrImages = $arrProducto['images'];
 							 ?>
 								<div class="item-slick3" data-thumb="<?= $arrImages[$img]['url_image']; ?>">
 									<div class="wrap-pic-w pos-relative">
-										<img src="<?= $arrImages[$img]['url_image']; ?>" alt="<?= $arrProducto['nombre']; ?>">
+										<img class="imgResize2" src="<?= $arrImages[$img]['url_image']; ?>" alt="<?= $arrProducto['nombre']; ?>">
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?= $arrImages[$img]['url_image']; ?>">
 											<i class="fa fa-expand"></i>
 										</a>
@@ -122,7 +122,7 @@ $arrImages = $arrProducto['images'];
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-pic hov-img0">
-								<img src="<?= $portada ?>" alt="<?= $arrProductos[$p]['nombre'] ?>">
+								<img class="imgResize" src="<?= $portada ?>" alt="<?= $arrProductos[$p]['nombre'] ?>">
 
 								<a href="<?= base_url().'/tienda/producto/'.$arrProductos[$p]['nombre']; ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 									Ver producto

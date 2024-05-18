@@ -90,7 +90,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 					<div class="menu-desktop">
 						<ul class="main-menu">
 
-							<li class="active-menu">
+							<li class="">
 								<a href="<?= base_url(); ?>">Inicio</a>
 							</li>
 
@@ -104,10 +104,6 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 
 							<li>
 								<a href="<?= base_url(); ?>/nosotros">Nosotros</a>
-							</li>
-
-							<li>
-								<a href="<?= base_url(); ?>/contacto">Contacto</a>
 							</li>
 						</ul>
 					</div>	
@@ -199,10 +195,6 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0 ){
 
 				<li>
 					<a href="<?= base_url(); ?>/nosotros">Nosotros</a>
-				</li>
-
-				<li>
-					<a href="<?= base_url(); ?>/contacto">Contacto</a>
 				</li>
 			</ul>
 		</div>
