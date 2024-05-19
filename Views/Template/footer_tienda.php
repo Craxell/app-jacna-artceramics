@@ -42,7 +42,8 @@
 
 					<p class="stext-107 cl7 size-201">
 						<strong>Direccion:</strong> <?= DIRECCION ?> <br>
-						<strong>Telefono: </strong> <?= CONTACTO ?>
+						<strong>Telefono: </strong> <?= CONTACTO ?><br>
+						<strong>Correo: </strong><?= EMAIL_EMPRESA ?>
 					</p>
 
 					<div class="p-t-27">
@@ -56,6 +57,9 @@
 								<a href="<?= WHATSAPP_EMPRESA?>" target = "_blanck" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
 									<i class="fa fa-whatsapp">  WhatsApp</i>
 								</a>
+
+								
+
 							</li>
 						</ul>
 					</div>
@@ -66,7 +70,7 @@
 				<p class="stext-107 cl6 txt-center">
 					<?= NOMBRE_EMPRESA; ?> | <?= WEB_EMPRESA; ?>  
 				</p>
-			</div>
+			</div>	
 		</div>
 	</footer>
 	<!-- Back to top -->
